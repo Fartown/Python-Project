@@ -1,0 +1,50 @@
+{% extends 'html/base.html' %} {% load staticfiles %} {% block content %}
+<div class="section">
+    <div class="two_left">
+        <div class="two_left_title">工程应用</div>
+        <table border="0" cellspacing="0" cellpadding="0" class="left_table">
+            <tr>
+                <td class="two_center">
+                    <ul class="left_empty">
+                        <li class="active_li"><a href="teacher.html">工程应用</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="{% static 'images/two_bottom.png' %}" width="221" height="37" /></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container1">
+        <td valign="top">
+            <div class="two_right">
+                <div class="two_right_title">
+                    <div class="two_right_title_h1"> 工程应用</div>
+                    <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> 当前位置 ：首页 &gt; 工程应用 </div>
+                </div>
+                <div class="two_img"><img src="{% static 'images/banner.jpg' %}" /></div>
+                <div class="two_news_list">
+                    <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
+                        {% for engineer in engin_list %}
+                        <tr>
+                            <td width="20">
+                                <a href="#"></a><img src="{% static 'images/dot2.png' %}" width="4" height="6" />
+                                <a href="#"></a>
+                            </td>
+                            <td align="left" class="index_table_size"><a href="{% url "engindetail" id=engineer.id %}">{{ engineer.id }}{{ engineer.title }}</a></td>
+                            <td width="120" align="center" class="public_color1">{{engineer.add_date|date:"Y /m /d"}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="page"><a href="#">上一页</a><a href="#">1</a><a href="#">下一页</a></div>
+            </div>
+        </td>
+        </tr>
+        </table>
+    </div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,89 @@
+﻿{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="section">
+        <div class="two_left">
+            <div class="two_left_title">人员信息</div>
+            <table border="0" cellspacing="0" cellpadding="0" class="left_table">
+                <tr>
+                    <td class="two_center">
+                        <ul class="left_empty">
+                            <li><a href="{% url "person"  %}">老师</a></li>
+                            <li class="field_li1 active_li"><a href="{% url "student"  %}">学生</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/two_bottom.png' %}" width="221" height="37" /></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container1">
+            <div class="two_right">
+                <div class="two_right_title">
+                    <div class="two_right_title_h1"> 学生信息</div>
+                    <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> 当前位置 ：首页 &gt;人员&gt;学生 </div>
+                </div>
+                <ul class="stu_name">
+                    <li class="li_edu">博士后</li>
+                    <li class="li_name">
+                        {% for post in postdoctor %}
+                            <ul class="stu_ul" id="stu_ul">
+                                <li class="stu_li stu_li_img">
+                                    <img src="{{MEDIA_URL}}/uploads/{{ post.image }}" id="stu_img"></li>
+                                <li class="stu_li stu_li_text">
+                                    {% autoescape off %} {{ post.content }} {% endautoescape %}
+                                </li>
+                                <div class="clearfix">
+                                </div>
+                            </ul>
+                        {% endfor %}
+                    </li>
+                    <li class="li_edu">博士</li>
+                    <li class="li_name">
+                        {% for student in doctor %}
+                            <ul class="stu_ul" id="stu_ul">
+                                <li class="stu_li stu_li_img">
+                                    <img src="{{MEDIA_URL}}/uploads/{{ student.image }}" id="stu_img"></li>
+                                <li class="stu_li stu_li_text">
+                                    {% autoescape off %} {{ student.content }} {% endautoescape %}
+                                </li>
+                                <div class="clearfix">
+                                </div>
+                            </ul>
+                        {% endfor %}
+                    </li>
+                    <li class="li_edu">硕士</li>
+                    <li class="li_name">
+                        {% for student in master %}
+                            <ul class="stu_ul" id="stu_ul">
+                                <li class="stu_li stu_li_img">
+                                    <img src="{{MEDIA_URL}}/uploads/{{ student.image }}" id="stu_img"></li>
+                                <li class="stu_li stu_li_text">
+                                    {% autoescape off %} {{ student.content }} {% endautoescape %}
+                                </li>
+                                <div class="clearfix">
+                                </div>
+                            </ul>
+                        {% endfor %}
+                    </li>
+                    <li class="li_edu">本科</li>
+                    <li class="li_name">
+                        {% for student in bachelor %}
+                            <ul class="stu_ul" id="stu_ul">
+                                <li class="stu_li stu_li_img">
+                                    <img src="{{MEDIA_URL}}/uploads/{{ student.image }}" id="stu_img"></li>
+                                <li class="stu_li stu_li_text">
+                                    {% autoescape off %} {{ student.content }} {% endautoescape %}
+                                </li>
+                                <div class="clearfix">
+                                </div>
+                            </ul>
+                        {% endfor %}
+                    </li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div> <div class="clearfix"></div>
+    </div> <div class="clearfix"></div>
+{% endblock %}

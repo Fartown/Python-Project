@@ -1,0 +1,59 @@
+﻿{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% block content %}
+		<div class="section">
+			<div class="two_left">
+	            <div class="two_left_title">人员信息</div>
+	            <table border="0" cellspacing="0" cellpadding="0" class="left_table">
+	              <tr>
+	                <td class="two_center">
+	                	<ul class="left_empty">
+                            <li class="active_li"><a href="{% url "person"  %}">教师</a></li>
+                            <li class="field_li1"><a href="{% url "student"  %}">学生</a></li>
+	                    </ul>
+	                 </td>
+	              </tr>
+	              <tr>
+	                <td><img src="{% static 'images/two_bottom.png' %}" width="221" height="37" /></td>
+	              </tr>
+	            </table>
+            </div>
+			<div class="container1">
+				<div class="two_right">
+					<div class="two_right_title"> 
+						<div class="two_right_title_h1"> 教师信息</div>
+		              <div class="two_right_title_next"> <img src="images/next_ico.png" width="2" height="10" /> 当前位置 ：首页 &gt;人员&gt;教师 </div>
+		            </div>
+						<div>
+						   <div class="tea_title">教授：孙路石</div>
+						   <div class="tea_mes">
+						   		<img src="{% static 'images/teacher1.jpg' %}" class="tea_pho">
+						   		<p>教授，博士生导师，主要从事燃料燃烧与热化学转化以及污染物控制等方面的研究工作。现担能源动力装置节能减排教育部工程中心副主任，湖北省燃烧工程研究会常务理事、秘书长。1999年毕业于武汉水利电力大学热能工程系，获工学硕士学位。2004年毕业于华中科技大学能源与动力工程学院，获工学博士学位。2001.10～2002.3，赴法国国家科学研究中心进行中法第九届科技混委会项目“煤燃烧和废弃物焚烧中有害元素排放和控制技术研究”的合作研究。2009.10～2010.10，英国伦敦帝国理工学院化学工程与技术系，访问学者。发表SCI/EI/ISTP收录论文100余篇，合作出版专著2部，获得发明专利10余项。</p><p>电子邮箱：sunlushi@hust.edu.cn</p>
+						   		<div class="clearfix"></div>
+						   </div>
+						   <div class="tea_title">讲师：王贲</div>
+						   <div class="tea_mes">
+						   		<img src="{% static 'images/teacher3.jpg' %}" class="tea_pho">
+						   		<p>讲师，湖北武汉人。2006年毕业于华中科技大学能源与动力工程学院。2007年-2012年在华中科技大学煤燃烧国家重点实验室对富氧燃烧条件下典型煤种中氮的迁徙规律进行研究，取得热能工程专业博士学位。2012年8月-2014年9月，在加拿大阿尔伯塔大学化学与材料工程学院进行博士后研究工作，开展了化石能源气化过程中矿物质的转化机理、焦的物化特性和污染物排放的研究。博士后期间基金项目1项，参加国家计划课题1项、国家自然科学基金2项，同时参与横向企业应用课题多项。发表学术论文20余篇，其中SCI收录6篇，EI收录13篇。参加国际会议口头报告4次，国内会议口头报告2次。</p><p>邮箱：benwang@hust.edu.cn</p>
+						   		<div class="clearfix"></div>
+				   			</div>
+				   			   <div class="tea_title">科研秘书：熊桂媛</div>
+				   			<div class="tea_mes">
+				   		<img src="{% static 'images/teacher2.jpg' %}" class="tea_pho">
+				   		<ul class="tea_ul2">
+				   			<li>姓名:熊桂媛</li>
+				   			<li>性别:女</li>
+				   			<li>科研秘书，高级人力资源管理师。负责课题组内部管理及行政事务工作</li>
+				   		</ul>
+				   		<div class="clearfix"></div>
+				   </div>
+				
+			</div>
+				</div>
+			<div class="clearfix"></div>
+			</div>
+    <div class="clearfix"></div>
+    </div>
+
+{% endblock %}
+		

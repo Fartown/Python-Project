@@ -1,0 +1,66 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="section">
+        <div class="two_left">
+            <div class="two_left_title">新闻动态</div>
+            <table border="0" cellspacing="0" cellpadding="0" class="left_table">
+                <tr>
+                    <td class="two_center">
+                        <ul class="left_empty">
+                            <li class="active_li"><a href="teacher.html">最新动态</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/two_bottom.png' %}" width="221" height="37" /></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container1">
+            <td valign="top">
+                <div class="two_right">
+                    <div class="two_right_title">
+                        <div class="two_right_title_h1"> 最新动态</div>
+                        <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> 当前位置 ：首页 &gt; 动态 </div>
+                    </div>
+                    <div class="two_img"><img src="{% static 'images/banner.jpg' %}" /></div>
+                    <div class="two_news_list">
+                        <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
+                            {% for o in object_list %}
+                                <tr class="news_tr">
+                                    <td width="20">
+                                        <a href="#"></a><img src="{% static 'images/dot2.png' %}" width="4" height="6" />
+                                        <a href="#"></a>
+                                    </td>
+                                    <td align="left" class="index_table_size"><a href="{% url "detail" id=o.id %}">{{ o.title }}</a></td>
+                                    <td width="120" align="center" class="public_color1"></td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="page">
+                        <ul class="pager">
+                            <li class="current">{{ object_list.number  }} / {{ object_list.paginator.num_pages  }}</li>
+                            {% if object_list.has_previous %}
+                                <li class="previous"><a href="?page={{ object_list.previous_page_number  }}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                            {% else %}
+                                <li class="previous disabled"><a href=""><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                            {% endif %}
+                            {% if object_list.has_next %}
+                                <li class="next"><a href="?page={{ object_list.next_page_number  }}">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                            {% else %}
+                                <li class="next disabled"><a href="">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+{% endblock %}

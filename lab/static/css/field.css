@@ -1,0 +1,227 @@
+body,div,ul,li,a,img{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+p{text-indent: 2em;}
+.section{
+	width: 70%;
+	margin-left: 15%;
+	/*height: 400px;*/
+}
+.section aside{
+	float: left;
+	width: 16.6%;
+	height: 100%;
+	background:   #73B5E7;
+}
+.section aside span{
+	display: block;
+	width: 100%;
+	border-top: 2px solid grey;
+	color: #fff;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+footer{
+	width: 70%;
+	margin-left: 15%;
+	text-align: center;
+	height: 100px;
+	position: relative;
+/*	margin-top: 50px;*/
+/*	border-top: 1px dashed #ccc ;*/
+	background: -moz-linear-gradient(top, #fff 0%, #8AC1EB 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#8AC1EB));
+	background: -webkit-linear-gradient(top, #fff 0%,#8AC1EB 100%);
+	background: -o-linear-gradient(top, #fff 0%,#8AC1EB 100%); 
+	background: -ms-linear-gradient(top, #fff 0%,#8AC1EB 100%);
+	background: linear-gradient(to bottom, #fff 0%,#8AC1EB 100%);
+}
+footer span{
+	position: absolute;
+	bottom: 5px;
+	right: 50%;
+	margin-right: -205px;
+}
+.container1{
+	width:76%;
+	text-align: center;
+	float: left;
+}
+.container233{
+	width:100%;
+	text-align: center;
+	float: left;
+	border: 1px #CBE2EE solid;
+	border-top: 0px #fff solid;
+}
+.div233{
+	margin-bottom: 30%;
+}
+.ul233{
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.fie_title233{
+	font-size: 1.5em;
+	font-weight: bold;
+	text-indent: 2em;
+	color: #000;
+	background: lightblue;
+	margin-top: 10px;
+}
+.fie_text233{
+	color: #053976;
+	font-size: 1.3em;
+	text-indent: 4em;
+	display: block;
+}
+.field_ul li{
+	padding-left: 5%;
+	margin-left: 5%;
+	width: 90%;
+	padding-top: 10px;
+	height: 40px;
+	border-bottom:1px dashed grey; 
+	color: #fff;
+}
+.field_ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+.field_li1{
+	border-top: 1px dashed rgba(51,121,205,0.6);
+}
+.active_li{
+	background: rgba(51,121,205,0.6);
+}
+.two_right_title{ 
+	background:url(../images/title_bg.png) repeat-x;
+	 height:39px;
+	 line-height:39px;
+	}
+.two_right_title_h1{ 
+	background:url(../images/r_title.png) no-repeat; 
+	width:106px; 
+	height:39px; 
+	line-height:39px;
+	float:left;
+	color:#1a75bc; 
+	font-weight:bold; 
+	text-align:center; 
+	font-size:14px; 
+	padding-left:5px;
+}
+.two_right_title_next{ 
+	font-size:12px; 
+	color:#000; 
+	float:right; 
+	padding-right:5px;
+}
+.two_left{ 
+	width:23%; 
+	float:left;
+	margin-right: 5px;
+}
+.two_left_title{ 
+	background:url(../images/two_titile.png) no-repeat; 
+	height:37px; 
+	color:#FFFFFF; 
+	font-size:14px; 
+	font-weight:bold; 
+	text-align:left; 
+	padding-left:10px; 
+	line-height:37px;}
+.left_table{
+	width: 100%;
+	display: block;
+}
+.left_table img{
+	width: 100%;
+}
+.two_center{ 
+	background:#F5FBFE;
+	border-left:1px #CBE2EE solid;
+	border-right: 1px #CBE2EE solid;
+	padding-top:10px;
+	text-indent: 2em;
+}
+.two_center li{
+	line-height: 30px;
+}
+.detail{ width:1000px; border:1px solid #cce3ee;}
+.detail_title{background:url(../images/title_bg.png) repeat-x; height:39px;line-height:39px;font-size:12px; color:#FFFFFF; padding-left:5px; text-align:left;}
+.detail_title a{
+	color: #fff;
+}
+
+.left_empty .field_title{
+	font-weight: bolder;
+	text-indent: 5px;
+	font-size: 1em;
+}
+.fie_img{
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.fie_text{
+	border:#CCE3EE 1px solid;
+	border-top: none;
+	/*height: 1000px;*/
+	padding:0px 5px;
+}
+.fie_text p{
+	text-align: left;
+}
+.fie_text h2{
+	font-weight: bolder;
+	margin-top: 0;
+}
+.fie_smalltitle{
+	font-weight: bold;
+	text-indent: 5px;
+}
+
+@media only screen and (max-width:768px) {
+	.section aside{
+		display: inline-block;
+		width: 100%;
+		height: 35px;
+	}
+	.section aside span{
+		display: none;
+	}
+	.field_ul li{
+		width: 24%;
+		display: inline-block;
+		padding: 0;
+		padding-top: 5px;
+		margin: 0;
+		text-align: center;
+		height: 30px;
+		border: none;
+	}
+	.active_li{
+		/*background: none;*/
+	}
+	.field_ul .active_li a{
+		color: #000;
+	}
+	.section{
+		width: 80%;
+		margin-left: 10%;
+	}
+}
+@media only screen and (max-width:480px) {
+	.field_ul li{
+		width: 100%;
+		display: none;
+	}
+	.field_ul .active_li{
+		display: block;
+	}
+}

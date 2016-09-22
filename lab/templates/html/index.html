@@ -1,0 +1,120 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="section1">
+			<div id="wrapper"><!-- 最外层部分 -->
+			   	<div id="banner"><!-- 轮播部分 -->
+			    	<ul class="imgList"><!-- 图片部分 -->
+			      		<li id="slideli1"><a href="#"><img src="{% static 'images/index1.jpg' %}" width="100%" height="400px" alt="puss in boots1"> </a></li>
+			      		<li><a href="#"><img src="{% static 'images/index1.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      		<li><a href="#"><img src="{% static 'images/news1.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --> </a></li>
+			      		<li><a href="#"><img src="{% static 'images/news2.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      		<li><a href="#"><img src="{% static 'images/news3.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      	</ul>
+			      	<img src="{% static 'images/left.png' %}" width="20px" height="200px" id="prev">
+			      	<img src="{% static 'images/right1.png' %}" width="20px" height="200px" id="next">
+			      	<ul class="indexList"><!-- 图片右下角序号部分 -->
+			        	<li class="indexOn">1</li>
+			        	<li>2</li>
+			        	<li>3</li>
+			        	<li>4</li>
+			        	<li>5</li>
+			      	</ul>
+			    </div>
+
+		 	</div>
+		</div>
+		<script type="text/javascript">
+				var curIndex = 0, 
+			    imgLen = $(".imgList li").length; /*图片总数*/
+			  	var autoChange = setInterval(function(){ 
+			    	if(curIndex < imgLen-1){ 
+			      		curIndex ++; 
+			   		}
+			   		else{ 
+			      		curIndex = 0;
+			    	}
+			    	changeTo(curIndex); 
+			 	 },2500);
+			   /*左箭头*/
+			  $("#prev").hover(function(){ 
+				    clearInterval(autoChange);
+				  },function(){ 
+				    autoChangeAgain();
+			  });
+			  $("#prev").click(function(){ 
+			    curIndex = (curIndex > 0) ? (--curIndex) : (imgLen - 1);
+			    changeTo(curIndex);
+			  });
+			  /*右箭头*/
+			  $("#next").hover(function(){ 
+			    clearInterval(autoChange);
+			  },function(){ 
+			    autoChangeAgain();
+			  });
+			  $("#next").click(function(){ 
+			    curIndex = (curIndex < imgLen - 1) ? (++curIndex) : 0;
+			    changeTo(curIndex);
+			  });
+			  /*对右下角按钮*/
+			  $(".indexList").find("li").each(function(item){ 
+			    $(this).hover(function(){ 
+			      clearInterval(autoChange);
+			      changeTo(item);
+			      curIndex = item;
+			    },function(){ 
+			      autoChangeAgain();
+			    });
+			  });
+			 /* 清除定时器*/
+			  function autoChangeAgain(){ 
+			      autoChange = setInterval(function(){ 
+			      if(curIndex < imgLen-1){ 
+			        curIndex ++;
+			      }else{ 
+			        curIndex = 0;
+			      }
+			      changeTo(curIndex); 
+			    },2500);
+			    }
+			  function changeTo(num){ 
+			  	var wid=$('#slideli1').width();
+			    var goLeft = num * wid;
+			    $(".imgList").animate({left: "-" + goLeft + "px"},500);
+			    $(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
+			    $(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
+			  }
+  		</script>
+  		<div class="section2">
+  			<aside>
+  				<ul class="field">
+  					<li id="field-title">领域</li>
+	  				<li><a href="{% url 'field' %}">燃煤污染物<br>一体化协调脱除</a></li>
+	  				<li><a href="{% url 'field' %}">固体废弃物<br>高值化利用</a></li>
+	  				<li><a href="{% url 'field' %}">矿物质积灰<br>结渣机理研究</a></li>
+  				</ul>
+  			</aside>
+  			<div class="news">
+  				<h1>新闻动态</h1>
+  				<span class="line"></span>
+  				<span class="line1"></span>
+  				<ul class="news_ul">
+  					<li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.0.image }}"></div>
+                        <a href="{% url "detail" id=news.0.id %}">{{ news.0.title }}</a>
+                        <p>{% autoescape off %}{{ news.0.content|truncatechars_html:90 }}{% endautoescape %}</p>
+                    </li>
+                    <li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.1.image }}"></div>
+                        <a href="{% url "detail" id=news.1.id %}">{{ news.1.title }}</a>
+                        <p>{% autoescape off %}{{ news.1.content|truncatechars_html:90 }}{% endautoescape %}</p>
+                    </li>
+                    <li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.2.image }}"></div>
+                        <a href="{% url "detail" id=news.2.id %}">{{ news.2.title }}</a>
+                        <p>{% autoescape off %}{{ news.2.content|truncatechars_html:90}}{% endautoescape %}</p>
+                    </li>
+  					<div class="clearfix"></div>
+  				</ul>
+  				<a href="{% url "news" %}" class="readmore">Read more...</a>
+  			</div>
+  			<div class="clearfix"></div>
+  		</div>
+{% endblock %}

@@ -1,0 +1,86 @@
+/*-- Header Part Starts Here --*/
+*{
+  margin: 0;
+  padding: 0;
+}
+.header{
+  background:rgba(51,121,205,0.8);
+  width: 70%;
+  margin-left: 15%;
+  box-shadow:0 5px 5px #AFDCEF;
+}
+.container{
+  width: 100%;
+  padding: 0;
+}
+.logo{
+  width: 100%;
+  height: 100px;
+ /* border: grey 1px solid;*/
+  background: #fff;
+}
+.logo_img{
+  height: 100%;
+  width: 100%;
+}
+.logo_img1{
+  height: 70%;
+  margin-top: 15px;
+  /*width: 100%;*/
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+.banner-top {
+  width:100%;
+  float: left;
+}
+nav a{
+  position: relative;
+  display: inline-block;
+  margin: 0px 0px 10px;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  font-size: 1.35em;
+}
+nav a:hover,
+nav a:focus, ul.navig a:hover, ul.navig a:focus {
+  outline: none;
+}
+/*-- Header Part Ends Here --*/
+/*--banner--*/
+.banner{
+	background-size:cover;
+	-webkit-background-size:cover;
+	-o-background-size:cover;
+	-moz-background-size:cover;
+	-ms-background-size:cover;
+	min-height:150px;
+}
+/*--/banner--*/
+.clearfix{
+  clear: both;
+}
+/*footer{
+  text-align: center;
+  height: 100px;
+  position: relative;
+  margin-top: 20px;
+/*  border-top: 1px dashed #ccc ;*/
+ /* background: -moz-linear-gradient(top, #fff 0%, #ccc 100%); 
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#ccc));
+  background: -webkit-linear-gradient(top, #fff 0%,#ccc 100%);
+  background: -o-linear-gradient(top, #fff 0%,#ccc 100%); 
+  background: -ms-linear-gradient(top, #fff 0%,#ccc 100%);
+  background: linear-gradient(to bottom, #fff 0%,#ccc 100%);
+}
+footer span{
+  position: absolute;
+  bottom: 5px;
+  right: 50%;
+  margin-right: -205px;
+}*/

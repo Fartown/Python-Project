@@ -1,0 +1,174 @@
+
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+		<!-- jQuery-->
+		<script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+		<!-- css -->
+		<link href="{% static 'css/banner.css' %}" rel='stylesheet' type='text/css' />
+		<link href="{% static 'css/index.css' %}" rel='stylesheet' type='text/css' />
+		<!-- 导航栏 -->
+		<link href="{% static 'css/nav.css' %}" rel="stylesheet" type="text/css" media="all"/>
+	</head>
+	<body>
+		<div class="banner" >
+			<div class="header">
+				<div class="logo"><img src="{% static 'images/logo_01.png' %}" class="logo_img"></div>
+			<!-- <div class="logo">LOGO ABC</div> -->
+			<div class="container">
+				<div class="banner-top">
+					<ul class="nav banner-nav">
+							<li class="dropdown1"><a href="index.html" class="active">首页</a></li>
+							<li class="dropdown1"><a href="news.html">动态</a></li>
+							<li class="dropdown1"><a href="teacher.html">人员</a>
+								<ul class="dropdown2">
+									<li><a href="teacher.html">老师</a></li>
+									<li><a href="student.html">学生</a></li>
+								</ul>
+							</li>
+							<li class="dropdown1"><a href="field1.html">领域</a>
+								<ul class="dropdown2">
+									<li><a href="field1.html">燃煤污染物一体化协调脱除</a></li>
+									<li><a href="field2.html">固体废弃物高值化利用</a></li>
+									<li><a href="field3.html">矿物质积灰结渣机理研究</a></li>
+								</ul>
+							</li>
+							<li class="dropdown1"><a href="achieve1.html">成果</a>
+								<ul class="dropdown2">
+									<li><a href="achieve1.html">基金</a></li>
+									<li><a href="achieve2.html">论文</a></li>
+									<li><a href="achieve3.html">专利</a></li>
+								</ul>
+							</li>
+							<li class="dropdown1"><a href="engineer.html">技术开发</a></li>
+							<li class="dropdown1"><a href="about.html">关于我们</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			</div>
+		</div>
+		<div class="section1">
+			<div id="wrapper"><!-- 最外层部分 -->
+			   	<div id="banner"><!-- 轮播部分 -->
+			    	<ul class="imgList"><!-- 图片部分 -->
+			      		<li id="slideli1"><a href="#"><img src="{% static 'images/index1.jpg' %}" width="100%" height="400px" alt="puss in boots1"> </a></li>
+			      		<li><a href="#"><img src="{% static 'images/news1.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      		<li><a href="#"><img src="{% static 'images/news2.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --> </a></li>
+			      		<li><a href="#"><img src="{% static 'images/news3.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      		<li><a href="#"><img src="{% static 'images/news3.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      	</ul>
+			      	<img src="" width="20px" height="40px" id="prev">
+			      	<img src="" width="20px" height="40px" id="next">
+			      	<div class="bg"></div> <!-- 图片底部背景层部分-->
+			      	<ul class="infoList"><!-- 图片左下角文字信息部分 -->
+			        	<li class="infoOn">puss in boots1</li>
+			        	<li>puss in boots2</li>
+			        	<li>puss in boots3</li>
+			        	<li>puss in boots4</li>
+			        	<li>puss in boots5</li>
+			     	</ul>
+			      	<ul class="indexList"><!-- 图片右下角序号部分 -->
+			        	<li class="indexOn">1</li>
+			        	<li>2</li>
+			        	<li>3</li>
+			        	<li>4</li>
+			        	<li>5</li>
+			      	</ul>
+			    </div>
+
+		 	</div>
+		</div>
+		<script type="text/javascript">
+				var curIndex = 0,
+			    imgLen = $(".imgList li").length; /*图片总数*/
+			  	var autoChange = setInterval(function(){
+			    	if(curIndex < imgLen-1){
+			      		curIndex ++;
+			   		}
+			   		else{
+			      		curIndex = 0;
+			    	}
+			    	changeTo(curIndex);
+			 	 },2500);
+			   /*左箭头*/
+			  $("#prev").hover(function(){
+				    clearInterval(autoChange);
+				  },function(){
+				    autoChangeAgain();
+			  });
+			  $("#prev").click(function(){
+			    curIndex = (curIndex > 0) ? (--curIndex) : (imgLen - 1);
+			    changeTo(curIndex);
+			  });
+			  /*右箭头*/
+			  $("#next").hover(function(){
+			    clearInterval(autoChange);
+			  },function(){
+			    autoChangeAgain();
+			  });
+			  $("#next").click(function(){
+			    curIndex = (curIndex < imgLen - 1) ? (++curIndex) : 0;
+			    changeTo(curIndex);
+			  });
+			  /*对右下角按钮*/
+			  $(".indexList").find("li").each(function(item){
+			    $(this).hover(function(){
+			      clearInterval(autoChange);
+			      changeTo(item);
+			      curIndex = item;
+			    },function(){
+			      autoChangeAgain();
+			    });
+			  });
+			 /* 清除定时器*/
+			  function autoChangeAgain(){
+			      autoChange = setInterval(function(){
+			      if(curIndex < imgLen-1){
+			        curIndex ++;
+			      }else{
+			        curIndex = 0;
+			      }
+			      changeTo(curIndex);
+			    },2500);
+			    }
+			  function changeTo(num){
+			  	var wid=$('#slideli1').width();
+			    var goLeft = num * wid;
+			    $(".imgList").animate({left: "-" + goLeft + "px"},500);
+			    $(".infoList").find("li").removeClass("infoOn").eq(num).addClass("infoOn");
+			    $(".indexList").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
+			  }
+  		</script>
+  		<div class="section2">
+  			<aside>
+  				<ul class="field">
+  					<li id="field-title">领域</li>
+	  				<li><a href="field1.html">燃煤污染物<br>一体化协调脱除</a></li>
+	  				<li><a href="field3.html">固体废弃物<br>高值化利用</a></li>
+	  				<li><a href="field5.html">矿物质积灰<br>结渣机理研究</a></li>
+  				</ul>
+  			</aside>
+  			<div class="news">
+  				<h1>新闻动态</h1>
+  				<span class="line"></span>
+  				<span class="line1"></span>
+  				<ul class="news_ul">
+  					<li><div class="news_img"><img src="../images/news1.jpg"></div><a href="news1.html">热烈祝贺于洁完成博士后出站答辩</a><p>6月1号于洁博士后出站报告在煤燃烧国家重点实验室，武汉科技大学韩军教授、华中科技大学胡松教授、张世红教授、郭欣教授、邱纪华教授、成晓北教授参加了答辩报告。于洁做了“城市生活垃圾飞灰热处理浸出特性研究”的报告，参加答辩报告的老师肯定了课题的研究意义，并就相关问题和于洁进行深入交流。</p></li>
+  					<li><div class="news_img"><img src="../images/news2.jpg"></div><a href="news2.html">热烈祝贺孙老师课题组2016届硕士答辩顺利举行</a><p>5月14日2016届硕士答辩在煤燃烧国家重点实验室举行，答辩委员会主席为华中科技大学能源学院陈刚教授。肖茜、段梦、郅勇、赵鹏分别围绕SCR催化剂失活及再生机理、武汉市典型行业碳减排潜力、SCR流场优化设计、锅炉低氮燃烧特性做了答辩报告。张世红、毛睿等答辩委员会老师进行提问，并与参加答辩的同学交流讨论课题的相关问题。</p></li>
+  					<li><div class="news_img"><img src="../images/news3.jpg"></div><a href="news3.html">马川博士参加2016生物质与废弃物高值化利用国际会议</a><p>2016生物质与废弃物高值化利用国际会议（6th International Conference on Engineering for Waste and Biomass Valorisation ）,于2016年五月23-26在法国阿尔比举办。此会议涵盖了本专业的大部分研究领域，会议主题主要有关 固体废物和生物质向附加值产物转变等方面的研究。具体包括了资源与原料的可持续利用，预处理，利用生物化学、热化学回收生物质和废弃物制备能源以及化工原料，能源效率与储存以及循环能源经济的生命周期评价等等。马川博士参加此会议并作口头报告“Study of MCM-41 catalyst on the Catalytic Degradation of Brominated Acrylonitrile–Butadiene–Styrene”。</p></li>
+  					<div class="clearfix"></div>
+  				</ul>
+  				<a href="news.html" class="readmore">Read more...</a>
+  			</div>
+  			<div class="clearfix"></div>
+  		</div>
+  		<footer>
+  			<span style="font-family:arial;">Copyright &copy;XXXXXXXXXXXX tel:123456789 e-mail:xxxxx@xxxx.com</span>
+  		</footer>
+	</body>
+</html>

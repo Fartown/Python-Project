@@ -1,0 +1,6 @@
+
+Django == 1.8
+DjangoUeditor ==1.8.143
+Markdown==2.6.5
+django-suit==0.2.17
+#python == 3.5.1

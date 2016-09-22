@@ -1,0 +1,24 @@
+{% extends 'html/base.html' %}
+{% load staticfiles %}
+{% block content %}
+		<div class="section">
+			<div class="container233">
+				<div class="two_right_title"> 
+						<div class="two_right_title_h1">研究领域</div>
+		              <div class="two_right_title_next"> 当前位置 ：首页 &gt;研究领域 </div>
+		        </div>
+		        <div class="div233">
+		        	<ul class="ul233">
+                        {% for field in fieldarticle %}
+	                		<li class="fie_title233">{{ field.0.tag }}</li>
+                            {% for fie in field %}
+                             <li><a href="{% url "fielddetail" id=fie.id %}"  class="fie_text233">{{ fie.title }} </a></li>
+                            {% endfor %}
+                        {% endfor %}
+                    </ul>
+		        </div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+{% endblock %}
+
