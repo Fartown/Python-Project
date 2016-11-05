@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '43_m92a-x#+)-#^svhg5s^ew)^seyhm&up0$v@94f$2@0*5+5@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'labmanage',
+    'gunicorn',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -100,12 +102,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-# STATIC_URL = '/static/'
-# STATIC_ROOT= os.path.join(BASE_DIR,'statics/')
-
+#STATIC_ROOT = os.path.join(BASE_DIR, "static/") # 部署时添加root
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static'),
+   os.path.join(BASE_DIR,'static'),
 )
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
@@ -115,3 +115,13 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'django.core.context_processors.request',
 )
+
+#国际化
+# from django.utils.translation import ugettext_lazy as _
+# LANGUAGES = (
+#     ('zh-cn', _('Simplified Chinese')),
+#     ('en', _('English')),
+# )
+# LOCALE_PATHS = (
+#     os.path.join(BASE_DIR, "locale"),
+# )

@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load myfilter %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -21,7 +22,8 @@
 		<div class="banner" >
 			<div class="header">
 				<div class="logo"><img src="{% static 'images/logo_01.png' %}" class="logo_img">
-                <img src="{% static 'images/logo1.png' %}" class="logo_img1"></div>
+                <img src="{% static 'images/logo1.png' %}" class="logo_img1">
+                <p id="english"><a href="/en">English Version</a></p></div>
 			<!-- <div class="logo">LOGO ABC</div> -->
 			<div class="container">
 				<div class="banner-top">
@@ -36,16 +38,16 @@
 							</li>
 							<li class="dropdown1"><a href="{% url "field" %}" id="field123">领域</a>
 								<ul class="dropdown2">
-									<li><a href="field1.html">燃煤污染物一体化协调脱除</a></li>
-									<li><a href="field2.html">固体废弃物高值化利用</a></li>
-									<li><a href="field3.html">矿物质积灰结渣机理研究</a></li>
+                                    {% for tag in fieldtag %}
+                                        <li><a href="{% url 'field' %}">{{ tag|ench:'0' }}</a></li>
+                                    {% endfor %}
 								</ul>
 							</li>
 							<li class="dropdown1"><a href="{% url "achieve" %}" id="achieve123">成果</a>
 								<ul class="dropdown2">
-									<li><a href="achieve1.html">基金</a></li>
-									<li><a href="achieve2.html">论文</a></li>
-									<li><a href="achieve3.html">专利</a></li>
+									<li><a href="/achieve">基金</a></li>
+									<li><a href="/paper">论文</a></li>
+									<li><a href="/patent">专利</a></li>
 								</ul>
 							</li>
 							<li class="dropdown1"><a href="{% url "technology" %}" id="engineer123">技术开发</a></li>
@@ -63,8 +65,8 @@
         {% block content %}
 		{% endblock %}
   		<footer>
-  			<span style="font-family:arial;">Copyright &copy;XXXXXXXXXXXX tel:123456789 e-mail:xxxxx@.com</span>
-  			<span style="font-family:arial;"><a href="{{absurl}}">管理员登陆入口</a></span>
+  			<span style="font-family:arial;">Copyright &copy;华中大能源学院孙路石课题组
+</span>
   		</footer>
 	</body>
 </html>

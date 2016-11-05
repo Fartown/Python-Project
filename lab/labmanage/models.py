@@ -103,8 +103,6 @@ class Field(models.Model):
     tag = models.CharField(max_length=100,verbose_name='类别')
     title = models.CharField(max_length=100, blank=True, null=True, verbose_name='标题')
     content = models.TextField(blank=True, null=True, verbose_name='领域内容')
-
-
     def __unicode__(self):
         return self.title
 
@@ -113,4 +111,16 @@ class Field(models.Model):
 
     class Meta:
         verbose_name = '研究领域'
+        verbose_name_plural = verbose_name
+class Banner(models.Model):
+    img = models.ImageField(upload_to='banner',verbose_name='首页轮播图')
+    class Meta:
+        verbose_name = '首页轮播图'
+        verbose_name_plural = verbose_name
+    # def __str__(self):
+    #     return self.img\
+class About(models.Model):
+    content = models.TextField(blank=True, null=True, verbose_name='关于我们')
+    class Meta:
+        verbose_name = '关于我们'
         verbose_name_plural = verbose_name

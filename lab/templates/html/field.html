@@ -1,6 +1,7 @@
 {% extends 'html/base.html' %}
 {% load staticfiles %}
 {% block content %}
+{% load myfilter %}
 		<div class="section">
 			<div class="container233">
 				<div class="two_right_title"> 
@@ -10,7 +11,7 @@
 		        <div class="div233">
 		        	<ul class="ul233">
                         {% for field in fieldarticle %}
-	                		<li class="fie_title233">{{ field.0.tag }}</li>
+	                		<li class="fie_title233">{{ field.0.tag|ench:'0' }}</li>
                             {% for fie in field %}
                              <li><a href="{% url "fielddetail" id=fie.id %}"  class="fie_text233">{{ fie.title }} </a></li>
                             {% endfor %}

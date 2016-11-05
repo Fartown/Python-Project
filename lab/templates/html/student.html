@@ -80,6 +80,19 @@
                                 </div>
                             </ul>
                         {% endfor %}
+                    <li class="li_edu">毕业生</li>
+                    <li class="li_name">
+                        {% for student in graduate %}
+                            <ul class="stu_ul" id="stu_ul">
+                                <li class="stu_li stu_li_img">
+                                    <img src="{{MEDIA_URL}}/uploads/{{ student.image }}" id="stu_img"></li>
+                                <li class="stu_li stu_li_text">
+                                    {% autoescape off %} {{ student.content }} {% endautoescape %}
+                                </li>
+                                <div class="clearfix">
+                                </div>
+                            </ul>
+                        {% endfor %}
                     </li>
                 </ul>
             </div>

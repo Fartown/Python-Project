@@ -1,6 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from labmanage.views import *
+from labmanage.enviews import *
 from lab.uploads import upload_image
 from django.conf import settings
 from django.conf.urls.static import static
@@ -23,5 +24,19 @@ urlpatterns = [
     url(r'^technology/','labmanage.views.technology',name = 'technology'),
     url(r'^technology(?P<id>\d+)/','labmanage.views.engindetail',name = 'engindetail'),
     url(r'^about/','labmanage.views.about',name = 'about'),
-    url(r'^home/', ArticleListView.as_view(), name='blog_index'),
+    # url(r'^home/', ArticleListView.as_view(), name='blog_index'),
+    # english
+    url(r'^en/$', 'labmanage.enviews.home', name='enhome'),
+    url(r'^en/news/','labmanage.enviews.news',name = 'ennews'),
+    url(r'^en/news(?P<id>\d+)/','labmanage.enviews.detail',name = 'endetail'),
+    url(r'^en/person/','labmanage.enviews.person',name = 'enperson'),
+    url(r'^en/student/','labmanage.enviews.student',name = 'enstudent'),
+    url(r'^en/field/','labmanage.enviews.field',name = 'enfield'),
+    url(r'^en/field(?P<id>\d+)/','labmanage.enviews.fielddetail',name = 'enfielddetail'),
+    url(r'^en/achieve/','labmanage.enviews.achieve',name = 'enachieve'),
+    url(r'^en/paper/','labmanage.enviews.paper',name = 'enpaper'),
+    url(r'^en/patent/','labmanage.enviews.patent',name = 'enpatent'),
+    url(r'^en/technology/','labmanage.enviews.technology',name = 'entechnology'),
+    url(r'^en/technology(?P<id>\d+)/','labmanage.enviews.engindetail',name = 'enengindetail'),
+    url(r'^en/about/','labmanage.enviews.about',name = 'enabout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -33,7 +33,7 @@
                                     <a href="#"></a><img src="{% static 'images/dot2.png' %}" width="4" height="6" />
                                     <a href="#"></a>
                                 </td>
-                                <td align="left" class="index_table_size"><a href="{% url "detail" id=news.id %}">{{news.id}}.{{news.title}}</a></td>
+                                <td align="left" class="index_table_size"><a href="{% url "detail" id=news.id %}">{{news.title}}</a></td>
                                 <td width="120" align="center" class="public_color1">{{news.add_date|date:"Y /m /d"}}</td>
                             </tr>
                         {% endfor %}  

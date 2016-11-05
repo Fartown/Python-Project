@@ -1,6 +1,16 @@
-body,div,ul,li,a,img{margin: 0;padding: 0;}
+body,div,ul,li,a,img{margin: 0;padding: 0;font-family: "Microsoft YaHei" !important;}
 ul,li{list-style: none;}
 a{text-decoration: none;}
+#english{
+    position: absolute;
+bottom: -11px;
+    right:5px;
+    font-size: 16px;
+    color: white;
+}
+#english a{
+    color: white;
+}
 .section1{
 	background: ;
 	width: 70%;
@@ -92,7 +102,7 @@ a{text-decoration: none;}
 	margin-left: 15%;
 }
 .section2 aside{
-	background: grey;
+	background:#74B4EB;
 	float: left;
 	width: 20%;
 	margin-top: 25px;
@@ -141,6 +151,7 @@ a{text-decoration: none;}
 	font-weight: bolder;
 	display: block;
 	margin: 5px;
+	margin-top: 50px;
 }
 .news_ul p{
 	text-indent: 2em;
@@ -148,6 +159,9 @@ a{text-decoration: none;}
 	display: block;
 	height: 100px;
 	overflow: hidden;
+}
+.news_ul p.blank{
+	height: 60px;
 }
 .news_img{
 	width:100%;

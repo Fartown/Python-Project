@@ -1,6 +1,7 @@
 {% extends 'html/base.html' %}
 {% load staticfiles %}
 {% block content %}
+{% load myfilter %}
     <div class="section">
         <div class="two_left">
             <div class="two_left_title">研究领域</div>
@@ -8,15 +9,12 @@
                 <tr>
                     <td class="two_center">
                         <ul class="left_empty">
-                            <li class="field_title">燃煤污染物一体化协调脱除</li>
-                            <li class="active_li"><a href="field1.html">高级氧化 </a></li>
-                            <li><a href="field2.html">低温等离子体</a></li>
-                            <li class="field_title">固体废弃物高值化利用</li>
-                            <li><a href="field3.html">E-Waste关键问题 </a></li>
-                            <li><a href="field4.html">其他固废处置研究</a></li>
-                            <li class="field_title">矿物质积灰结渣机理研究</li>
-                            <li><a href="field5.html">矿物质元素的赋存形态分离</a></li>
-                            <li><a href="field6.html">积灰结渣特性综合判别模型</a></li>
+                            {% for field in fieldarticle %}
+                                <li class="field_title">{{ field.0.tag|ench:'0' }}</li>
+                                {% for fie in field %}
+                                    <li><a href="{% url "fielddetail" id=fie.id %}">{{ fie.title }} </a></li>
+                                {% endfor %}
+                            {% endfor %}
                         </ul>
                     </td>
                 </tr>

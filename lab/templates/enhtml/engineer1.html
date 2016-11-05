@@ -1,0 +1,18 @@
+{% extends 'enhtml/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="section">
+        <div class="detail">
+            <div class="detail_title"> <img src="images/next_ico.png" width="2" height="10" /> Position ：<a href="index.html">Home</a> &gt; <a href="engineer.html">Engineer Applications</a> &gt; {{post.title}}</div>
+            <div class="detail_h1">{{post.title}}</div>
+            <div class="detail_time">{{post.add_date|date:"Y /m /d"}}</div>
+            <div class="detail_text">
+                {% autoescape off %}
+                    {{post.content}}
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+{% endblock %} 

@@ -1,15 +1,16 @@
 {% extends 'html/base.html' %}
 {% load staticfiles %}
 {% block content %}
+{% load myfilter %}
 <div class="section1">
 			<div id="wrapper"><!-- 最外层部分 -->
 			   	<div id="banner"><!-- 轮播部分 -->
 			    	<ul class="imgList"><!-- 图片部分 -->
-			      		<li id="slideli1"><a href="#"><img src="{% static 'images/index1.jpg' %}" width="100%" height="400px" alt="puss in boots1"> </a></li>
-			      		<li><a href="#"><img src="{% static 'images/index1.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
-			      		<li><a href="#"><img src="{% static 'images/news1.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --> </a></li>
-			      		<li><a href="#"><img src="{% static 'images/news2.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
-			      		<li><a href="#"><img src="{% static 'images/news3.jpg' %}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      		<li id="slideli1"><a href="#"><img src="{{MEDIA_URL}}/uploads/{{banner.0.img}}" width="100%" height="400px" alt="puss in boots1"> </a></li>
+			      		<li><a href="#"><img src="{{MEDIA_URL}}/uploads/{{banner.1.img}}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      		<li><a href="#"><img src="{{MEDIA_URL}}/uploads/{{banner.2.img}}" width="100%" height="400px" alt="puss in boots2"> --> </a></li>
+			      		<li><a href="#"><img src="{{MEDIA_URL}}/uploads/{{banner.3.img}}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
+			      		<li><a href="#"><img src="{{MEDIA_URL}}/uploads/{{banner.4.img}}" width="100%" height="400px" alt="puss in boots2"> --></a></li>
 			      	</ul>
 			      	<img src="{% static 'images/left.png' %}" width="20px" height="200px" id="prev">
 			      	<img src="{% static 'images/right1.png' %}" width="20px" height="200px" id="next">
@@ -89,9 +90,9 @@
   			<aside>
   				<ul class="field">
   					<li id="field-title">领域</li>
-	  				<li><a href="{% url 'field' %}">燃煤污染物<br>一体化协调脱除</a></li>
-	  				<li><a href="{% url 'field' %}">固体废弃物<br>高值化利用</a></li>
-	  				<li><a href="{% url 'field' %}">矿物质积灰<br>结渣机理研究</a></li>
+	  				<li><a href="{% url 'field' %}">{{ fieldtag.0|ench:'0' }}</a></li>
+                    <li><a href="{% url 'field' %}">{{ fieldtag.1|ench:'0' }}</a></li>
+                    <li><a href="{% url 'field' %}">{{ fieldtag.2|ench:'0' }}</a></li>
   				</ul>
   			</aside>
   			<div class="news">
@@ -101,15 +102,15 @@
   				<ul class="news_ul">
   					<li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.0.image }}"></div>
                         <a href="{% url "detail" id=news.0.id %}">{{ news.0.title }}</a>
-                        <p>{% autoescape off %}{{ news.0.content|truncatechars_html:90 }}{% endautoescape %}</p>
+                        <p class = 'blank'>{% autoescape off %}{{ news.0.content|truncatechars_html:100 }}{% endautoescape %}</p>
                     </li>
                     <li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.1.image }}"></div>
                         <a href="{% url "detail" id=news.1.id %}">{{ news.1.title }}</a>
-                        <p>{% autoescape off %}{{ news.1.content|truncatechars_html:90 }}{% endautoescape %}</p>
+                        <p class = 'blank'>{% autoescape off %}{{ news.1.content|truncatechars_html:100 }}{% endautoescape %}</p>
                     </li>
                     <li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.2.image }}"></div>
                         <a href="{% url "detail" id=news.2.id %}">{{ news.2.title }}</a>
-                        <p>{% autoescape off %}{{ news.2.content|truncatechars_html:90}}{% endautoescape %}</p>
+                        <p class = 'blank'>{% autoescape off %}{{ news.2.content|truncatechars_html:100}}{% endautoescape %}</p>
                     </li>
   					<div class="clearfix"></div>
   				</ul>

@@ -1,0 +1,53 @@
+{% extends 'enhtml/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="section">
+        <div class="two_left">
+            <div class="two_left_title">Achievements</div>
+            <table border="0" cellspacing="0" cellpadding="0" class="left_table">
+                <tr>
+                    <td class="two_center">
+                        <ul class="left_empty">
+                             <li ><a href="/en/achieve">Fund</a></li>
+                            <li ><a href="/en/paper">Paper</a></li>
+                            <li class="active_li"><a href="/en/patent">Patent</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/two_bottom.png' %}" width="221" height="37" /></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container1">
+            <td valign="top">
+                <div class="two_right">
+                    <div class="two_right_title">
+                        <div class="two_right_title_h1"> Patent</div>
+                        <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> Position ：Home &gt; Achievement&gt;Patent </div>
+                    </div>
+                    <div class="two_news_list1">
+                        <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
+                            {% for patent in patent_list %}
+                            <tr class="news_tr">
+                                <td width="20">
+                                    <a href="#"></a><img src="{% static 'images/dot2.png' %}" width="4" height="6" />
+                                    <a href="#"></a>
+                                </td>
+                                <td align="left" class="index_table_size1">{{patent.id}}、 {{patent.content}}</td>
+                                <td width="20" align="center" class="public_color1"></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <div class="page"><a href="#">上一页</a><a href="#">1</a><a href="#">下一页</a></div>
+                </div>
+            </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+{% endblock %}
