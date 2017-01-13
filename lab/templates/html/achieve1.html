@@ -8,7 +8,7 @@
                 <tr>
                     <td class="two_center">
                         <ul class="left_empty">
-                            <li class="active_li"><a href="{% url "achieve"  %}">基金</a></li>
+                            <li class="active_li"><a href="{% url "achieve"  %}">科研项目</a></li>
                             <li><a href="{% url "paper"  %}">论文</a></li>
                             <li><a href="{% url "patent"  %}">专利</a></li>
                         </ul>
@@ -40,7 +40,17 @@
                         {% endfor %}
                         </table>
                     </div>
-                    <div class="page"><a href="#">上一页</a><a href="#">1</a><a href="#">下一页</a></div>
+                    <div class="page">
+                     {% if funds_list and funds_list.paginator.num_pages > 1 %}
+                                {% if funds_list.has_previous %}
+                                    <a href="?page={{ funds_list.previous_page_number }}">上一页</a>
+                                {% endif %}
+
+                                {% if funds_list.has_next %}
+                                    <a href="?page={{ funds_list.next_page_number }}">下一页</a>
+                                {% endif %}
+                    {% endif %}
+                    </div>
                 </div>
             </td>
             </tr>

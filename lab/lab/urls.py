@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^technology/','labmanage.views.technology',name = 'technology'),
     url(r'^technology(?P<id>\d+)/','labmanage.views.engindetail',name = 'engindetail'),
     url(r'^about/','labmanage.views.about',name = 'about'),
+    url(r'^device/','labmanage.views.device',name = 'device'),
     # url(r'^home/', ArticleListView.as_view(), name='blog_index'),
     # english
     url(r'^en/$', 'labmanage.enviews.home', name='enhome'),
@@ -39,4 +40,5 @@ urlpatterns = [
     url(r'^en/technology/','labmanage.enviews.technology',name = 'entechnology'),
     url(r'^en/technology(?P<id>\d+)/','labmanage.enviews.engindetail',name = 'enengindetail'),
     url(r'^en/about/','labmanage.enviews.about',name = 'enabout'),
+    url(r'^en/device/','labmanage.enviews.device',name = 'endevice'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

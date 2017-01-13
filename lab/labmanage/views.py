@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from labmanage.models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views.generic.list import ListView
-from django.db.models import F
+
 
 # Create your views here.
 def home(request):
     try:
         fieldlist = Field.objects.all()
+        news_list = News.objects.all()[:5]
+        engin_list = Engineer.objects.all()[:10]
+        paper_list = Paper.objects.all()[:5]
         fieldtag = []
         for field in fieldlist:
             i=0
@@ -15,20 +17,37 @@ def home(request):
         fieldtag = list(set(fieldtag))
         news = News.objects.all()
         banner = Banner.objects.all()
+        device = Device.objects.all()[:4]
     except News.DoesNotExist:
         raise Http404
     return render(request,'html/index.html',locals())
+def device(request):
+    fieldlist = Field.objects.all()
+    fieldtag = []
+    for field in fieldlist:
+        i=0
+        fieldtag.insert(i,field.tag)
+    fieldtag = list(set(fieldtag))
+    banner = Banner.objects.all()
+    device = Device.objects.all()
+    return render(request,'html/device.html',locals())
 def news(request):
     try:
         news_list = News.objects.all()
-        paginator = Paginator(news_list,2)
+        fieldlist = Field.objects.all()
+        fieldtag = []
+        for field in fieldlist:
+            i=0
+            fieldtag.insert(i,field.tag)
+        fieldtag = list(set(fieldtag))
+        paginator = Paginator(news_list, 10)
         page = request.GET.get('page')
         try :
-            post_list = paginator.page(page)
+            news_list = paginator.page(page)
         except PageNotAnInteger :
-            post_list = paginator.page(1)
+            news_list = paginator.page(1)
         except EmptyPage :
-            post_list = paginator.paginator(paginator.num_pages)
+            news_list = paginator.paginator(paginator.num_pages)
     except News.DoesNotExist:
         raise Http404
     return render(request,'html/news.html',locals())
@@ -41,17 +60,43 @@ def detail(request,id):
 def technology(request):
     try:
         engin_list = Engineer.objects.all()
+        paginator = Paginator(engin_list, 10)
+        page = request.GET.get('page')
+        try :
+            engin_list = paginator.page(page)
+        except PageNotAnInteger :
+            engin_list = paginator.page(1)
+        except EmptyPage :
+            engin_list = paginator.paginator(paginator.num_pages)
+        fieldlist = Field.objects.all()
+        fieldtag = []
+        for field in fieldlist:
+            i=0
+            fieldtag.insert(i,field.tag)
+        fieldtag = list(set(fieldtag))
     except Engineer.DoesNotExist:
         raise Http404
-    return render(request,'html/engineer.html',{'engin_list':engin_list})
+    return render(request,'html/engineer.html',locals())
 def engindetail(request,id):
     try:
         post = Engineer.objects.get(id=str(id))
+        fieldlist = Field.objects.all()
+        fieldtag = []
+        for field in fieldlist:
+            i=0
+            fieldtag.insert(i,field.tag)
+        fieldtag = list(set(fieldtag))
     except Engineer.DoseNotExist:
         raise Http404
     return render(request,'html/engineer1.html',{'post':post})
 def person(request):
-    return render(request,'html/teacher.html')
+    fieldlist = Field.objects.all()
+    fieldtag = []
+    for field in fieldlist:
+        i=0
+        fieldtag.insert(i,field.tag)
+    fieldtag = list(set(fieldtag))
+    return render(request,'html/teacher.html',locals())
 def student(request):
     try:
         student_list = Student.objects.all()
@@ -99,38 +144,55 @@ def fielddetail(request,id):
     return render(request,'html/field1.html',locals())
 def achieve(request):
     try:
+        fieldlist = Field.objects.all()
+        fieldtag = []
+        for field in fieldlist:
+            i=0
+            fieldtag.insert(i,field.tag)
+        fieldtag = list(set(fieldtag))
         funds_list = Funds.objects.all()
+        # 分页
+        paginator = Paginator(funds_list, 20)
+        page = request.GET.get('page')
+        try :
+            funds_list = paginator.page(page)
+        except PageNotAnInteger :
+            funds_list = paginator.page(1)
+        except EmptyPage :
+            funds_list = paginator.paginator(paginator.num_pages)
     except Article.DoesNotExist:
         raise Http404
-    return render(request,'html/achieve1.html',{'funds_list':funds_list})
+    return render(request,'html/achieve1.html',locals())
 def paper(request):
     try:
         paper_list = Paper.objects.all()
+        paginator = Paginator(paper_list, 15)
+        page = request.GET.get('page')
+        try :
+            paper_list = paginator.page(page)
+        except PageNotAnInteger :
+            paper_list = paginator.page(1)
+        except EmptyPage :
+            paper_list = paginator.paginator(paginator.num_pages)
     except Article.DoesNotExist:
         raise Http404
     return render(request,'html/achieve2.html',{'paper_list':paper_list})
 def patent(request):
     try:
         patent_list = Patent.objects.all()
+        paginator = Paginator(patent_list, 13)
+        page = request.GET.get('page')
+        try :
+            patent_list = paginator.page(page)
+        except PageNotAnInteger :
+            patent_list = paginator.page(1)
+        except EmptyPage :
+            patent_list = paginator.paginator(paginator.num_pages)
     except Article.DoesNotExist:
         raise Http404
     return render(request,'html/achieve3.html',{'patent_list':patent_list})
 def about(request):
     content = About.objects.all()[0].content
     return render(request,'html/about.html',{'content':content})
-class ArticleListView(ListView):
-    template_name = 'html/news3.html'
-    def get_queryset(self, **kwargs):
-        object_list = News.objects.all().order_by(F('add_date').desc())[:300]
-        paginator = Paginator(object_list, 4)
-        page = self.request.GET.get('page')
-        try:
-            object_list = paginator.page(page)
-        except PageNotAnInteger:
-            # If page is not an integer, deliver first page.
-            object_list = paginator.page(1)
-        except EmptyPage:
-            # If page is out of range (e.g. 9999), deliver last page of results.
-            object_list = paginator.page(paginator.num_pages)
-        return object_list
+
 

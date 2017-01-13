@@ -40,7 +40,16 @@
                             {% endfor %}
                         </table>
                     </div>
-                    <div class="page"><a href="#">Previous</a><a href="#">1</a><a href="#">Next</a></div>
+                    <div class="page">
+                    {% if paper_list and paper_list.paginator.num_pages > 1 %}
+                                {% if paper_list.has_previous %}
+                                    <a href="?page={{ paper_list.previous_page_number }}">Previous</a>
+                                {% endif %}
+
+                                {% if paper_list.has_next %}
+                                    <a href="?page={{ paper_list.next_page_number }}">Next</a>
+                                {% endif %}
+                    {% endif %}
                 </div>
             </td>
             </tr>

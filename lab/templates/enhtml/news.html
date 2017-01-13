@@ -21,7 +21,7 @@
             <td valign="top">
                 <div class="two_right">
                     <div class="two_right_title">
-                        <div class="two_right_title_h1"> Recent News</div>
+                        <div class="two_right_title_h1">  News</div>
                         <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> Position ：Home &gt; News </div>
                     </div>
                     <div class="two_img"><img src="{% static 'images/banner.jpg' %}" /></div>
@@ -40,13 +40,13 @@
                         </table>
                     </div>
                     <div class="page">
-                    {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
-                                {% if post_list.has_previous %}
-                                    <a href="?page={{ post_list.previous_page_number }}">Previous</a>
+                     {% if news_list and news_list.paginator.num_pages > 1 %}
+                                {% if news_list.has_previous %}
+                                    <a href="?page={{ news_list.previous_page_number }}">Previous</a>
                                 {% endif %}
 
-                                {% if post_list.has_next %}
-                                    <a href="?page={{ post_list.next_page_number }}">Next</a>
+                                {% if news_list.has_next %}
+                                    <a href="?page={{ news_list.next_page_number }}">Next</a>
                                 {% endif %}
                     {% endif %}
                     </div>

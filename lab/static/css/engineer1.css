@@ -1,6 +1,6 @@
-.two_right{ width:100%; float:right; border:1px solid #cce3ee;}
+.two_right{ width:100%; float:right; border:1px solid #cce3ee;min-height: 600px;}
 .two_right_title{ background:url(../images/title_bg.png) repeat-x; height:39px;line-height:39px;}
-.two_right_title_h1{ background:url(../images/r_title.png) no-repeat; width:106px; height:39px; line-height:39px; float:left; color:#1a75bc; font-weight:bold; text-align:center; font-size:14px; padding-left:5px;}
+.two_right_title_h1{ background:url(../images/r_title.png) no-repeat; width:106px; height:39px; line-height:39px; float:left; color:#1A97BC; font-weight:bold; text-align:center; font-size:14px; padding-left:5px;}
 .two_right_title_next{ font-size:12px; color:#000; float:right; padding-right:5px;}
 .two_img{ padding:10px; clear:both; text-align: center;}
 .two_img img{width: 100%;}

@@ -1,0 +1,8 @@
+Pillow == 3.3.1
+Django == 1.8
+DjangoUeditor ==1.8.143
+gunicorn == 19.6.0
+django-admin-bootstrapped == 2.5.7
+django-admin-bootstrapped-plus == 0.1.1.2
+
+#python == 3.5.1

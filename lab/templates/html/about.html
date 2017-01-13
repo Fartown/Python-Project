@@ -25,13 +25,13 @@
 		            </div>
 
 				   		<div class="clearfix"></div>
-                    <div></p></div>
+                    <div>
+                        {% autoescape off %}
+                            {{content}}
+                        {% endautoescape %}
+                    </div>
 				   </div>
-                <div>
-                    {% autoescape off %}
-                    {{content}}
-                    {% endautoescape %}
-                </div>
+
 			</div>
 				</div>
 				<div class="clearfix"></div>

@@ -29,29 +29,30 @@
 				<div class="banner-top">
 					<ul class="nav banner-nav">
 							<li class="dropdown1"><a href="{% url "home"  %}" >首页</a></li>
-							<li class="dropdown1"><a href="{% url "news" %}" >动态</a></li>
-							<li class="dropdown1"><a href="{% url "person" %}" id='teacher123'>人员</a>
+							<li class="dropdown1"><a href="{% url "news" %}" >新闻动态</a></li>
+							<li class="dropdown1"><a href="{% url "person" %}" id='teacher123'>团队成员</a>
 								<ul class="dropdown2">
 									<li><a href="{% url "person" %}">老师</a></li>
 									<li><a href="{% url "student" %}">学生</a></li>
 								</ul>
 							</li>
-							<li class="dropdown1"><a href="{% url "field" %}" id="field123">领域</a>
+							<li class="dropdown1"><a href="{% url "field" %}" id="field123">研究领域</a>
 								<ul class="dropdown2">
                                     {% for tag in fieldtag %}
                                         <li><a href="{% url 'field' %}">{{ tag|ench:'0' }}</a></li>
                                     {% endfor %}
 								</ul>
 							</li>
-							<li class="dropdown1"><a href="{% url "achieve" %}" id="achieve123">成果</a>
+							<li class="dropdown1"><a href="{% url "achieve" %}" id="achieve123">研究成果</a>
 								<ul class="dropdown2">
-									<li><a href="/achieve">基金</a></li>
+									<li><a href="/achieve">科研项目</a></li>
 									<li><a href="/paper">论文</a></li>
 									<li><a href="/patent">专利</a></li>
 								</ul>
 							</li>
 							<li class="dropdown1"><a href="{% url "technology" %}" id="engineer123">技术开发</a></li>
-							<li class="dropdown1"><a href="{% url "about" %}" id="about123">关于我们</a></li>
+							<li class="dropdown1"><a href="{% url "device" %}" id="about123">仪器设备</a></li>
+                        <li class="dropdown1"><a href="{% url "about" %}" id="about123">关于我们</a></li>
 					</ul>
 
                 </div>

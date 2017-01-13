@@ -1,0 +1,42 @@
+{% extends 'enhtml/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="section">
+        <div class="two_left">
+            <div class="two_left_title">研究领域</div>
+            <table border="0" cellspacing="0" cellpadding="0" class="left_table">
+                <tr>
+                    <td class="two_center">
+                        <ul class="left_empty">
+                            <li class="field_title">燃煤污染物一体化协调脱除</li>
+                            <li class="active_li"><a href="field1.html">高级氧化 </a></li>
+                            <li><a href="field2.html">低温等离子体</a></li>
+                            <li class="field_title">固体废弃物高值化利用</li>
+                            <li><a href="field3.html">E-Waste关键问题 </a></li>
+                            <li><a href="field4.html">其他固废处置研究</a></li>
+                            <li class="field_title">矿物质积灰结渣机理研究</li>
+                            <li><a href="field5.html">矿物质元素的赋存形态分离</a></li>
+                            <li><a href="field6.html">积灰结渣特性综合判别模型</a></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="{% static 'images/two_bottom.png' %}" width="221" height="37" /></td>
+                </tr>
+            </table>
+        </div>
+        <div class="container1">
+            <div class="two_right_title">
+                <div class="two_right_title_h1">研究领域</div>
+                <div class="two_right_title_next">当前位置 ：首页 &gt;研究领域&gt;{{post.title}} </div>
+            </div>
+            <div class="fie_text">
+                <h2>{{post.title}}</h2>
+                {% autoescape off %}
+                    {{post.content}}
+                {% endautoescape %}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+{% endblock %}    

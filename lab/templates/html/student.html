@@ -25,7 +25,9 @@
                     <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> 当前位置 ：首页 &gt;人员&gt;学生 </div>
                 </div>
                 <ul class="stu_name">
-                    <li class="li_edu">博士后</li>
+                    {% if postdoctor %}
+                        <li class="li_edu">博士后</li>
+                    {% endif %}
                     <li class="li_name">
                         {% for post in postdoctor %}
                             <ul class="stu_ul" id="stu_ul">
@@ -39,7 +41,9 @@
                             </ul>
                         {% endfor %}
                     </li>
+                    {% if doctor %}
                     <li class="li_edu">博士</li>
+                {% endif %}
                     <li class="li_name">
                         {% for student in doctor %}
                             <ul class="stu_ul" id="stu_ul">
@@ -67,7 +71,10 @@
                             </ul>
                         {% endfor %}
                     </li>
+                {% if bachelor %}
                     <li class="li_edu">本科</li>
+                {% endif %}
+
                     <li class="li_name">
                         {% for student in bachelor %}
                             <ul class="stu_ul" id="stu_ul">
@@ -80,7 +87,9 @@
                                 </div>
                             </ul>
                         {% endfor %}
+                {% if graduate %}
                     <li class="li_edu">毕业生</li>
+                {% endif %}
                     <li class="li_name">
                         {% for student in graduate %}
                             <ul class="stu_ul" id="stu_ul">

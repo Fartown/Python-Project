@@ -32,12 +32,7 @@ footer{
 	position: relative;
 /*	margin-top: 50px;*/
 /*	border-top: 1px dashed #ccc ;*/
-	background: -moz-linear-gradient(top, #fff 0%, #8AC1EB 100%); 
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#8AC1EB));
-	background: -webkit-linear-gradient(top, #fff 0%,#8AC1EB 100%);
-	background: -o-linear-gradient(top, #fff 0%,#8AC1EB 100%); 
-	background: -ms-linear-gradient(top, #fff 0%,#8AC1EB 100%);
-	background: linear-gradient(to bottom, #fff 0%,#8AC1EB 100%);
+	background: linear-gradient(to bottom, #fff 0%,#377C26 100%);
 }
 footer span{
 	position: absolute;
@@ -95,7 +90,7 @@ footer span{
 	border-top: 1px dashed rgba(51,121,205,0.6);
 }
 .active_li{
-	background: rgba(51,121,205,0.6);
+	background: #0D9443;
 }
 .two_right_title{ 
 	background:url(../images/title_bg.png) repeat-x;

@@ -24,7 +24,7 @@
                         <div class="two_right_title_h1"> 最新动态</div>
                         <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> 当前位置 ：首页 &gt; 动态 </div>
                     </div>
-                    <div class="two_img"><img src="{% static 'images/banner.jpg' %}" /></div>
+
                     <div class="two_news_list">
                         <table width="98%" border="0" align="left" cellpadding="0" cellspacing="0">
                         {% for news in news_list %}
@@ -40,13 +40,13 @@
                         </table>
                     </div>
                     <div class="page">
-                    {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
-                                {% if post_list.has_previous %}
-                                    <a href="?page={{ post_list.previous_page_number }}">上一页</a>
+                    {% if news_list and news_list.paginator.num_pages > 1 %}
+                                {% if news_list.has_previous %}
+                                    <a href="?page={{ news_list.previous_page_number }}">上一页</a>
                                 {% endif %}
 
-                                {% if post_list.has_next %}
-                                    <a href="?page={{ post_list.next_page_number }}">下一页</a>
+                                {% if news_list.has_next %}
+                                    <a href="?page={{ news_list.next_page_number }}">下一页</a>
                                 {% endif %}
                     {% endif %}
                     </div>

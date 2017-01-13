@@ -1,0 +1,55 @@
+.tea_mes{
+	position: relative;
+}
+.tea_pho{
+	width: 30%;
+	float: left;
+	margin: 10px;
+	padding-right:5px; 
+	border-right:1px solid grey; 
+	max-height: 300px;
+}
+.tea_pho2{
+	width: 20%;
+	float: left;
+	margin: 10px;
+	padding-right:5px; 
+	border-right:1px solid grey; 
+	max-height: 300px;
+}
+.tea_ul{
+	vertical-align: top;
+	display: inline-block;
+	text-align: left;
+	margin-top: 20px;
+	font-size: 1.2em;
+	width: 30%;
+	margin-bottom: 20px;
+}
+.tea_ul2{
+	display: inline-block;
+	text-align: left;
+	margin-top: 20px;
+	font-size: 1.2em;
+	width: 65%;
+	margin-bottom: 20px;
+}
+.tea_mes p{
+	text-indent: 2em;
+	text-align: left;
+}
+.tea_mes .tea_lw{
+	font-size: 0.7em;
+	text-indent: 0;
+	margin: 0 30px;
+}
+.tea_title{
+	font-weight: bold;
+	color: #053976;
+	text-align: left;
+	text-indent: 2em;
+	font-size: 1.3em;
+	font-weight: bold;
+	background:lightgrey;
+	margin-top: 10px;
+}

@@ -3,12 +3,12 @@
 {% block content %}
 		<div class="section">
 			<div class="two_left">
-	            <div class="two_left_title">About us</div>
+	            <div class="two_left_title">About</div>
 	            <table border="0" cellspacing="0" cellpadding="0" class="left_table">
 	              <tr>
 	                <td class="two_center">
 	                	<ul class="left_empty">
-	                    <li class="active_li"><a href="/admin">About us</a></li>
+	                    <li class="active_li"><a href="/admin">About</a></li>
 	                    </ul>
 	                 </td>
 	              </tr>
@@ -20,18 +20,18 @@
 			<div class="container1">
 				<div class="two_right">
 					<div class="two_right_title"> 
-						<div class="two_right_title_h1"> About us</div>
-		              <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> Position：Home &gt;About us </div>
+						<div class="two_right_title_h1"> About</div>
+		              <div class="two_right_title_next"> <img src="{% static 'images/next_ico.png' %}" width="2" height="10" /> Location ：Home &gt;About </div>
 		            </div>
 
 				   		<div class="clearfix"></div>
-                    <div></p></div>
+                    <div>
+                        {% autoescape off %}
+                            {{content}}
+                        {% endautoescape %}
+                    </div>
 				   </div>
-                <div>
-                    {% autoescape off %}
-                    {{content}}
-                    {% endautoescape %}
-                </div>
+
 			</div>
 				</div>
 				<div class="clearfix"></div>

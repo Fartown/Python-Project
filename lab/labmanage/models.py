@@ -82,7 +82,7 @@ class Student(models.Model):
 
 class News(models.Model):
     title = models.CharField(max_length=100, blank=True, null=True, verbose_name='标题')
-    image = models.ImageField(upload_to='photos',verbose_name='首页封面图')
+    image = models.ImageField(upload_to='photos', blank=True, null=True, verbose_name='首页封面图')
     content = models.TextField(blank=True, null=True, verbose_name='内容')
     views = models.IntegerField(default=0, verbose_name='点击次数')  # 点击率
     add_date = models.DateTimeField(auto_now=True)
@@ -108,19 +108,40 @@ class Field(models.Model):
 
     def __str__(self):
         return self.title
-
     class Meta:
         verbose_name = '研究领域'
         verbose_name_plural = verbose_name
 class Banner(models.Model):
     img = models.ImageField(upload_to='banner',verbose_name='首页轮播图')
+    title = '轮播图'
+    def __unicode__(self):
+        return self.title
+    def __str__(self):
+        return self.title
     class Meta:
         verbose_name = '首页轮播图'
+        verbose_name_plural = verbose_name
+class Device(models.Model):
+    title = models.CharField(max_length=20, blank=True, null=True, verbose_name='名称')
+    introduce = models.TextField(max_length=80, blank=True, null=True, verbose_name='介绍')
+    img = models.ImageField(upload_to='device',verbose_name='仪器设备')
+    def __unicode__(self):
+        return self.title
+
+    def __str__(self):
+        return self.title
+    class Meta:
+        verbose_name = '仪器设备'
         verbose_name_plural = verbose_name
     # def __str__(self):
     #     return self.img\
 class About(models.Model):
     content = models.TextField(blank=True, null=True, verbose_name='关于我们')
+    title = '关于我们的介绍'
+    def __unicode__(self):
+        return self.title
+    def __str__(self):
+        return self.title
     class Meta:
         verbose_name = '关于我们'
         verbose_name_plural = verbose_name

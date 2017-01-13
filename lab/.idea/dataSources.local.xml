@@ -1,40 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Django default" uuid="14bd2fca-fa7a-47b7-ae96-0ffa838af521">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default2" uuid="eaafdda7-bcd7-4d16-8ba2-dff96eac89d9">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default3" uuid="ca7cbd19-a1b4-4216-a62f-9777b7948fdb">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default4" uuid="fee0cf09-a468-4a68-9fa4-b416e62db0aa">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default5" uuid="579c3f8c-45cc-49c0-8c9d-b6e731c8ef6f">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default6" uuid="066c99fc-6fab-47a7-8a73-4c54313035fd">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default7" uuid="e902963b-24b5-401c-bd24-4cdf6e320723">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default8" uuid="5ab0cb28-d1ce-46ae-b818-ffcc085c3bf4">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default9" uuid="f379caee-412f-47ba-a0a2-dcadb639df6f">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default10" uuid="2c158008-ee9f-4468-906d-18ba0d394623">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default11" uuid="d2638170-deb7-4bc3-b3fd-9855968a1b8a">
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Django default12" uuid="aab42b1d-7894-4fb9-beed-f3a30e16ad22">
+    <data-source name="Django default" uuid="b0526195-0adf-4756-a9fa-50b7b31a61e2">
       <auth-required>false</auth-required>
     </data-source>
   </component>

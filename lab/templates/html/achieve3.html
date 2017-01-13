@@ -40,8 +40,17 @@
                             {% endfor %}
                         </table>
                     </div>
-                    <div class="page"><a href="#">上一页</a><a href="#">1</a><a href="#">下一页</a></div>
-                </div>
+                    <div class="page">
+                    {% if patent_list and patent_list.paginator.num_pages > 1 %}
+                                {% if patent_list.has_previous %}
+                                    <a href="?page={{ patent_list.previous_page_number }}">上一页</a>
+                                {% endif %}
+
+                                {% if patent_list.has_next %}
+                                    <a href="?page={{ patent_list.next_page_number }}">下一页</a>
+                                {% endif %}
+                    {% endif %}                
+                    </div>
             </td>
             </tr>
             </table>

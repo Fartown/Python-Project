@@ -1,8 +1,7 @@
 {% extends 'enhtml/base.html' %}
 {% load staticfiles %}
-{% load myfilter %}
 {% block content %}
-
+{% load myfilter %}
 <div class="section1">
 			<div id="wrapper"><!-- 最外层部分 -->
 			   	<div id="banner"><!-- 轮播部分 -->
@@ -88,35 +87,85 @@
 			  }
   		</script>
   		<div class="section2">
-  			<aside>
-  				<ul class="field">
-  					<li id="field-title">Achievement</li>
-	  				<li><a href="/en/field/">{{ fieldtag.0|ench:'1' }}</a></li>
-                    <li><a href="/en/field">{{ fieldtag.1|ench:'1' }}</a></li>
-                    <li><a href="/en/field">{{ fieldtag.2|ench:'1' }}</a></li>
-  				</ul>
-  			</aside>
-  			<div class="news">
-  				<h1>News</h1>
-  				<span class="line"></span>
-  				<span class="line1"></span>
-  				<ul class="news_ul">
-  					<li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.0.image }}"></div>
-                        <a href="{% url "endetail" id=news.0.id %}">{{ news.0.title }}</a>
-                        <p class = 'blank'>{% autoescape off %}{{ news.0.content|truncatechars_html:100 }}{% endautoescape %}</p>
-                    </li>
-                    <li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.1.image }}"></div>
-                        <a href="{% url "endetail" id=news.1.id %}">{{ news.1.title }}</a>
-                        <p class = 'blank'>{% autoescape off %}{{ news.1.content|truncatechars_html:100 }}{% endautoescape %}</p>
-                    </li>
-                    <li><div class="news_img"><img src="{{MEDIA_URL}}/uploads/{{ news.2.image }}"></div>
-                        <a href="{% url "endetail" id=news.2.id %}">{{ news.2.title }}</a>
-                        <p class = 'blank'>{% autoescape off %}{{ news.2.content|truncatechars_html:100}}{% endautoescape %}</p>
-                    </li>
-  					<div class="clearfix"></div>
-  				</ul>
-  				<a href="en/news" class="readmore">Read more...</a>
-  			</div>
-  			<div class="clearfix"></div>
+            <div class="aside">
+                <div class="title"><span id="left-item">Field</span><span id="more"><a href="/en/field">More>></a></span></div>
+                <div class="list">
+                    <ul>
+                        {% for tag in fieldtag %}
+                        <li><a href="{% url 'field' %}">{{ tag|ench:'1' }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="news">
+                <div class="title"><span id="left-item">News</span><span id="more"><a href="/en/news">More>></a></span></div>
+                <div class="list">
+                    <ul>
+                        {% for news in news_list %}
+                        <li><a href="{% url "detail" id=news.id %}">{{news.title}}</a><span id="news-time">{{news.add_date|date:"Y /m /d"}}</span></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="title"><span id="left-item">Technology</span><span id="more"><a href="/en/technology">More>></a></span></div>
+                <div class="list">
+                    <ul>
+                        {% for engineer in engin_list %}
+                        <li><a href="{% url "engindetail" id=engineer.id %}">{{ engineer.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="news">
+                <div class="title"><span id="left-item">Papers</span><span id="more"><a href="/en/paper">More>></a></span></div>
+                <div class="list">
+                    <ul>
+                        {% for paper in paper_list %}
+                        <li>{{paper.content}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="device">
+                <div class="title"><span id="left-item">Device</span><span id="more"><a href="/en/device">More>></a></span></div>
+                <div class="imgbox">
+                    <div id="box">
+                        {% for img in device %}
+                            <img src="{{MEDIA_URL}}/uploads/{{img.img}}" alt="">
+                        {% endfor %}
+                    </div>
+            </div>
+                <script>
+                    var carousel, oBox, oImg, imgWidth;
+                    carousel = document.getElementsByClassName('imgbox')[0];
+                    oBox = document.getElementById("box");
+                    oImg = oBox.getElementsByTagName("img");
+                    oBox.innerHTML = oBox.innerHTML + oBox.innerHTML;
+
+                    imgWidth = oImg[0].offsetWidth;
+
+                    oBox.style.width = imgWidth * (oImg.length)*2 + "px";
+
+                    function carouselMove() {
+                        if (oBox.offsetLeft < -oBox.offsetWidth / 2) {
+                            oBox.style.left = "0";
+                        }
+                        oBox.style.left = oBox.offsetLeft - 2 + "px";
+                    }
+                    var time = setInterval(carouselMove, 30);
+                    for (var i = 0; i < oImg.length; i++) {
+                        oImg[i].onmouseover = function(){
+                            clearInterval(time);
+                        }
+                        oImg[i].onmouseout = function(){
+                            time = setInterval(carouselMove, 30);
+
+                        }
+                    }
+                </script>
+            </div>
   		</div>
 {% endblock %}
