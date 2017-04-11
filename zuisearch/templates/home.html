@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extracss %} <link href="{% static '../static/css/index.css' %}" rel="stylesheet" />{% endblock %}
+<body>
+{% block content %}
+    <section class="clearfix">
+    <div class="logo"><img src="{% static '../static/images/zuilogo.png' %}" alt=""></div>
+        <div class="search">
+            <form action="http://www.baidu.com/s" method="get" target="_blank">
+                <div class="search-box">
+                    <input type="text" class="form-control" name="search" id="search" placeholder="输入关键词，回车或者点击下方相应按钮，即可检索。" baiduSug="2" value="">
+                </div>
+                <div class="select">
+                    <input type="submit" value="百度" id="baidu" button type="button" class="btn" />
+                    <input type="submit" value="知乎" id="zhihu" button type="button" class="btn" />
+                    <input type="submit" value="微博" id="weibo" button type="button" class="btn" />
+                    <input type="submit" value="豆瓣" id="douban" button type="button" class="btn" />
+                    <input type="submit" value="音乐" id="gequ" button type="button" class="btn" />
+                    <input type="submit" value="网盘" id="panci" button type="button" class="btn" />
+                    <input type="submit" value="校内" id="zuisearch" button type="button" class="btn" />
+                    <input type="submit" value="慕课" id="mooc" button type="button" class="btn" />
+                    <input type="submit" value="京东" id="jd" button type="button" class="btn" />
+                    <input type="submit" value="淘宝" id="taobao" button type="button" class="btn" />
+                    <input type="submit" value="谷歌" id="google" button type="button" class="btn" />
+                    <input type="submit" value="GitHub" id="github" button type="button" class="btn" />
+                </div>
+            </form>
+        </div>
+        <div class="aside"></div>
+        <div class="site">
+            <div class="left-table">
+                <h4>校内网站</h4>
+                <div class="lsite-box">
+                    {% for site in school_site %}
+                        <div class="site-item"><a href="{{ site.siteurl }}"><span>{{ site.title }}</span></a></div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="right-table">
+                <h4>常用站点</h4>
+                <div class="rsite-box">
+                    {% for site in site_list %}
+                        <div class="site-item"><a href="{{ site.siteurl }}"><span>{{ site.title }}</span></a></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+        <p class="more"><a href="/gate">查看全部网站</a></p>
+    </section>
+{% endblock %}
+{% block script %}
+    <script src="{% static '../static/js/jquery.min.js' %}"></script>
+    <script src="{% static '../static/js/search.js' %}"></script>
+    <script src="{% static '../static/js/baidu.js' %}"></script>
+{% endblock %}

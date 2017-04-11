@@ -1,0 +1,132 @@
+[2016-10-10 09:35:30 +0800] [20617] [INFO] Starting gunicorn 19.6.0
+[2016-10-10 09:35:30 +0800] [20617] [INFO] Listening at: http://127.0.0.1:8000 (20617)
+[2016-10-10 09:35:30 +0800] [20617] [INFO] Using worker: sync
+[2016-10-10 09:35:30 +0800] [20620] [INFO] Booting worker with pid: 20620
+/home/xingchen/pphelp/env/lib/python3.4/site-packages/django/template/defaulttags.py:66: UserWarning: A {% csrf_token %} was used in a template, but the context did not provide the value.  This is usually caused by not using RequestContext.
+  "A {% csrf_token %} was used in a template, but the context "
+
+[2016-10-10 09:36:34 +0800] [20677] [INFO] Booting worker with pid: 20677
+[2016-10-10 09:36:34 +0800] [20617] [INFO] Handling signal: hup
+[2016-10-10 09:36:34 +0800] [20617] [INFO] Hang up: Master
+[2016-10-10 09:36:34 +0800] [20678] [INFO] Booting worker with pid: 20678
+[2016-10-10 09:36:34 +0800] [20677] [INFO] Worker exiting (pid: 20677)
+/home/xingchen/pphelp/env/lib/python3.4/site-packages/django/template/defaulttags.py:66: UserWarning: A {% csrf_token %} was used in a template, but the context did not provide the value.  This is usually caused by not using RequestContext.
+  "A {% csrf_token %} was used in a template, but the context "
+
+[2016-11-06 14:31:28 +0800] [20678] [INFO] Worker exiting (pid: 20678)
+[2016-11-06 14:31:28 +0800] [20617] [INFO] Handling signal: term
+[2016-11-06 14:31:29 +0800] [20617] [INFO] Shutting down: Master
+[2016-11-06 14:35:55 +0800] [1329] [INFO] Starting gunicorn 19.6.0
+[2016-11-06 14:35:55 +0800] [1329] [INFO] Listening at: http://127.0.0.1:81 (1329)
+[2016-11-06 14:35:55 +0800] [1329] [INFO] Using worker: sync
+[2016-11-06 14:35:55 +0800] [1332] [INFO] Booting worker with pid: 1332
+[2016-11-06 15:03:19 +0800] [1332] [INFO] Worker exiting (pid: 1332)
+[2016-11-06 15:03:19 +0800] [1329] [INFO] Handling signal: term
+[2016-11-06 15:03:19 +0800] [1329] [INFO] Shutting down: Master
+[2016-11-06 15:10:48 +0800] [1563] [INFO] Starting gunicorn 19.6.0
+[2016-11-06 15:10:48 +0800] [1563] [INFO] Listening at: http://0.0.0.0:81 (1563)
+[2016-11-06 15:10:48 +0800] [1563] [INFO] Using worker: sync
+[2016-11-06 15:10:48 +0800] [1566] [INFO] Booting worker with pid: 1566
+[2016-11-06 15:13:48 +0800] [1727] [INFO] Booting worker with pid: 1727
+[2016-11-06 15:13:49 +0800] [1563] [INFO] Handling signal: hup
+[2016-11-06 15:13:49 +0800] [1563] [INFO] Hang up: Master
+[2016-11-06 15:13:49 +0800] [1728] [INFO] Booting worker with pid: 1728
+[2016-11-06 15:13:49 +0800] [1727] [INFO] Worker exiting (pid: 1727)
+[2016-11-11 09:21:05 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:1728)
+[2016-11-11 09:21:05 +0800] [1728] [INFO] Worker exiting (pid: 1728)
+[2016-11-11 09:21:05 +0800] [13739] [INFO] Booting worker with pid: 13739
+[2016-11-17 20:16:51 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:13739)
+[2016-11-17 20:16:51 +0800] [13739] [INFO] Worker exiting (pid: 13739)
+[2016-11-17 20:16:51 +0800] [26869] [INFO] Booting worker with pid: 26869
+[2016-11-18 09:42:43 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:26869)
+[2016-11-18 09:42:43 +0800] [26869] [INFO] Worker exiting (pid: 26869)
+[2016-11-18 09:42:43 +0800] [5353] [INFO] Booting worker with pid: 5353
+[2016-11-19 15:06:48 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:5353)
+[2016-11-19 15:06:48 +0800] [5353] [INFO] Worker exiting (pid: 5353)
+[2016-11-19 15:06:49 +0800] [2782] [INFO] Booting worker with pid: 2782
+[2016-11-23 00:58:42 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:2782)
+[2016-11-23 00:58:42 +0800] [2782] [INFO] Worker exiting (pid: 2782)
+[2016-11-23 00:58:42 +0800] [7279] [INFO] Booting worker with pid: 7279
+[2016-11-23 00:59:13 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:7279)
+[2016-11-23 00:59:13 +0800] [7279] [INFO] Worker exiting (pid: 7279)
+[2016-11-23 00:59:13 +0800] [7334] [INFO] Booting worker with pid: 7334
+[2016-11-27 02:45:38 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:7334)
+[2016-11-27 02:45:38 +0800] [7334] [INFO] Worker exiting (pid: 7334)
+[2016-11-27 02:45:38 +0800] [30955] [INFO] Booting worker with pid: 30955
+[2016-12-02 12:43:39 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:30955)
+[2016-12-02 12:43:39 +0800] [30955] [INFO] Worker exiting (pid: 30955)
+[2016-12-02 12:43:39 +0800] [29662] [INFO] Booting worker with pid: 29662
+[2016-12-09 08:44:14 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:29662)
+[2016-12-09 08:44:14 +0800] [29662] [INFO] Worker exiting (pid: 29662)
+[2016-12-09 08:44:14 +0800] [12519] [INFO] Booting worker with pid: 12519
+[2016-12-16 08:44:33 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:12519)
+[2016-12-16 08:44:34 +0800] [12519] [INFO] Worker exiting (pid: 12519)
+[2016-12-16 08:44:34 +0800] [12800] [INFO] Booting worker with pid: 12800
+[2016-12-19 22:42:08 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:12800)
+[2016-12-19 22:42:08 +0800] [12800] [INFO] Worker exiting (pid: 12800)
+[2016-12-19 22:42:08 +0800] [3128] [INFO] Booting worker with pid: 3128
+[2016-12-23 07:04:10 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:3128)
+[2016-12-23 07:04:10 +0800] [3128] [INFO] Worker exiting (pid: 3128)
+[2016-12-23 07:04:10 +0800] [8046] [INFO] Booting worker with pid: 8046
+[2016-12-29 08:03:17 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:8046)
+[2016-12-29 08:03:18 +0800] [8046] [INFO] Worker exiting (pid: 8046)
+[2016-12-29 08:03:18 +0800] [30360] [INFO] Booting worker with pid: 30360
+[2016-12-30 14:02:46 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:30360)
+[2016-12-30 14:02:46 +0800] [30360] [INFO] Worker exiting (pid: 30360)
+[2016-12-30 14:02:46 +0800] [31523] [INFO] Booting worker with pid: 31523
+[2017-01-02 14:14:25 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:31523)
+[2017-01-02 14:14:25 +0800] [31523] [INFO] Worker exiting (pid: 31523)
+[2017-01-02 14:14:25 +0800] [12351] [INFO] Booting worker with pid: 12351
+[2017-01-04 09:50:57 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:12351)
+[2017-01-04 09:50:57 +0800] [12351] [INFO] Worker exiting (pid: 12351)
+[2017-01-04 09:50:57 +0800] [27620] [INFO] Booting worker with pid: 27620
+[2017-01-06 08:50:33 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:27620)
+[2017-01-06 08:50:33 +0800] [27620] [INFO] Worker exiting (pid: 27620)
+[2017-01-06 08:50:33 +0800] [20620] [INFO] Booting worker with pid: 20620
+[2017-01-06 14:09:10 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:20620)
+[2017-01-06 14:09:10 +0800] [20620] [INFO] Worker exiting (pid: 20620)
+[2017-01-06 14:09:10 +0800] [5998] [INFO] Booting worker with pid: 5998
+[2017-01-06 14:10:19 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:5998)
+[2017-01-06 14:10:19 +0800] [5998] [INFO] Worker exiting (pid: 5998)
+[2017-01-06 14:10:19 +0800] [6054] [INFO] Booting worker with pid: 6054
+[2017-01-09 09:50:21 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:6054)
+[2017-01-09 09:50:21 +0800] [6054] [INFO] Worker exiting (pid: 6054)
+[2017-01-09 09:50:21 +0800] [7273] [INFO] Booting worker with pid: 7273
+[2017-01-12 09:50:42 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:7273)
+[2017-01-12 09:50:43 +0800] [7273] [INFO] Worker exiting (pid: 7273)
+[2017-01-12 09:50:43 +0800] [21054] [INFO] Booting worker with pid: 21054
+[2017-01-13 08:40:02 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:21054)
+[2017-01-13 08:40:02 +0800] [21054] [INFO] Worker exiting (pid: 21054)
+[2017-01-13 08:40:02 +0800] [1892] [INFO] Booting worker with pid: 1892
+[2017-01-15 14:37:29 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:1892)
+[2017-01-15 14:37:29 +0800] [1892] [INFO] Worker exiting (pid: 1892)
+[2017-01-15 14:37:29 +0800] [20876] [INFO] Booting worker with pid: 20876
+[2017-01-16 14:09:24 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:20876)
+[2017-01-16 14:09:24 +0800] [20876] [INFO] Worker exiting (pid: 20876)
+[2017-01-16 14:09:24 +0800] [2653] [INFO] Booting worker with pid: 2653
+[2017-01-19 13:24:34 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:2653)
+[2017-01-19 13:24:34 +0800] [2653] [INFO] Worker exiting (pid: 2653)
+[2017-01-19 13:24:34 +0800] [11404] [INFO] Booting worker with pid: 11404
+[2017-01-20 14:25:17 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:11404)
+[2017-01-20 14:25:17 +0800] [11404] [INFO] Worker exiting (pid: 11404)
+[2017-01-20 14:25:17 +0800] [28658] [INFO] Booting worker with pid: 28658
+[2017-01-27 13:29:35 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:28658)
+[2017-01-27 13:29:35 +0800] [28658] [INFO] Worker exiting (pid: 28658)
+[2017-01-27 13:29:35 +0800] [26188] [INFO] Booting worker with pid: 26188
+[2017-02-03 11:14:55 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:26188)
+[2017-02-03 11:14:55 +0800] [26188] [INFO] Worker exiting (pid: 26188)
+[2017-02-03 11:14:55 +0800] [19321] [INFO] Booting worker with pid: 19321
+[2017-02-06 00:03:49 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:19321)
+[2017-02-06 00:03:49 +0800] [19321] [INFO] Worker exiting (pid: 19321)
+[2017-02-06 00:03:49 +0800] [24378] [INFO] Booting worker with pid: 24378
+[2017-02-10 13:44:29 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:24378)
+[2017-02-10 13:44:30 +0800] [24378] [INFO] Worker exiting (pid: 24378)
+[2017-02-10 13:44:30 +0800] [27787] [INFO] Booting worker with pid: 27787
+[2017-02-10 21:33:47 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:27787)
+[2017-02-10 21:33:47 +0800] [27787] [INFO] Worker exiting (pid: 27787)
+[2017-02-10 21:33:47 +0800] [20975] [INFO] Booting worker with pid: 20975
+[2017-02-10 21:36:22 +0800] [1563] [CRITICAL] WORKER TIMEOUT (pid:20975)
+[2017-02-10 21:36:22 +0800] [20975] [INFO] Worker exiting (pid: 20975)
+[2017-02-10 21:36:22 +0800] [21147] [INFO] Booting worker with pid: 21147
+[2017-02-14 19:47:41 +0800] [21147] [INFO] Parent changed, shutting down: <Worker 21147>
+[2017-02-14 19:47:41 +0800] [21147] [INFO] Worker exiting (pid: 21147)

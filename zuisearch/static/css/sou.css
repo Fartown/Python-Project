@@ -1,0 +1,73 @@
+
+.keyword{
+    color: blue;
+}
+section{
+	width: 100%;
+	min-height: 8.88rem;
+	background-color: rgba(255,255,255,.6);
+}
+label,#id_models_0,#id_models{
+	display: none;
+}
+.sou{
+	width: 100%;
+	height: .51rem;
+}
+#id_q{
+	display: block;
+	margin: 0 auto;
+	height: .51rem;
+	width: 40%;
+	padding-left: 15px;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,.6);
+	font-size: 16px;
+}
+.result_item{
+	width: 50%;
+	margin:10px auto 0 auto;
+	background:rgba(0,161,241,0.7);
+	border-radius: 5px;
+	padding:3px 0 0 10px;
+	min-height: 1rem;
+	font-size: 18px;
+}
+.result_item p{
+    margin: 2px;
+    padding-left: 10px;
+}
+.empty{
+	margin-top: 1rem;
+	width: 100%;
+	text-align: center;
+}
+.empty p{
+padding-top: 1rem;
+width: 100%;
+color: black;
+font-size: 17px;
+
+letter-spacing: 1px;
+line-height: 25px;
+}
+.pagination{
+	width: 100%;
+	text-align: center;
+}
+.guide{
+	width: 100%;
+	font-size: 17px;
+	text-align: center;
+	color:black ;
+	padding-top: 2.1rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+.pagination{
+   font-size: 20px;
+    color: black;
+}
+.souresult{
+padding-bottom:.68rem;
+}

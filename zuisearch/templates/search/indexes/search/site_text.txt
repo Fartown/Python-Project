@@ -1,0 +1,5 @@
+{{ object.title }}
+{{ object.introduce }}
+{{ object.wxname }}
+{{ object.wxintro }}
+{{ object.wbname }}

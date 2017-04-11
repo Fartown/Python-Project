@@ -1,0 +1,9 @@
+# python3.5
+Django == 1.8
+django-admin-bootstrapped == 2.5.7
+django-bootstrap3 == 8.1.0
+django-haystack == 2.6.0
+gunicorn == 19.6.0
+jieba == 0.38
+Pillow == 4.0.0
+virtualenv == 15.1.0
