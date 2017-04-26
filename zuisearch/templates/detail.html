@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% load staticfiles %} 
+{% block extracss %}
+<link href="{% static '../static/css/detail.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+<section>
+<div class="content">
+<h2 class="name">{{ site.title }}</h2>
+ <div class="tag">介绍</div>
+ <p class="intro">{{ site.introduce }}</p>
+ {% if site.siteurl %}
+     <div class="tag">官网</div>
+     <p><span>官网地址:</span><a href="{{ site.siteurl }}">
+     {{ site.siteurl }}</a></p>
+ {% endif %}
+    {% if site.wxname %}
+        <div class="tag">官方微信</div>
+        <p>微信号名称:{{ site.wxname }}</p>
+        <p>微信号ID:{{ site.wxid }}</p>
+        <p>微信号介绍:{{ site.wxintro }}</p>
+        <p><img src="{{MEDIA_URL}}/uploads/{{site.wxcode}}" alt="{{ site.wxintro }}"></p>
+    {% endif %}
+    {% if site.wbname %}
+        <div class="tag">官方微博</div>
+        <p>微博名称:{{ site.wbname }}</p>
+       <p> <span>微博地址:</span><a href="{{ site.wburl }}">
+        {{ site.wburl }}</a></p>
+        <br>
+    {% endif %}
+</div>
+</section>
+{% endblock %} 
+{% block script %}
+<script src="{% static '../static/js/baidu.js' %}"></script>
+{% endblock %}

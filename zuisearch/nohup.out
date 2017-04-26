@@ -1,0 +1,42 @@
+[2017-02-14 21:02:24 +0800] [10964] [INFO] Starting gunicorn 19.6.0
+[2017-02-14 21:02:24 +0800] [10964] [INFO] Listening at: http://127.0.0.1:81 (10964)
+[2017-02-14 21:02:24 +0800] [10964] [INFO] Using worker: sync
+[2017-02-14 21:02:24 +0800] [10988] [INFO] Booting worker with pid: 10988
+[2017-02-14 21:10:57 +0800] [11578] [INFO] Starting gunicorn 19.6.0
+[2017-02-14 21:10:57 +0800] [11578] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-14 21:10:57 +0800] [11578] [ERROR] Retrying in 1 second.
+[2017-02-14 21:10:58 +0800] [11578] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-14 21:10:58 +0800] [11578] [ERROR] Retrying in 1 second.
+[2017-02-14 21:10:59 +0800] [11578] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-14 21:10:59 +0800] [11578] [ERROR] Retrying in 1 second.
+[2017-02-14 21:11:00 +0800] [11578] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-14 21:11:00 +0800] [11578] [ERROR] Retrying in 1 second.
+[2017-02-14 21:11:01 +0800] [11578] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-14 21:11:01 +0800] [11578] [ERROR] Retrying in 1 second.
+[2017-02-14 21:11:02 +0800] [11578] [ERROR] Can't connect to ('127.0.0.1', 81)
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 1.307 seconds.
+Prefix dict has been built succesfully.
+[2017-02-17 21:27:15 +0800] [23326] [INFO] Starting gunicorn 19.6.0
+[2017-02-17 21:27:15 +0800] [23326] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-17 21:27:15 +0800] [23326] [ERROR] Retrying in 1 second.
+[2017-02-17 21:27:16 +0800] [23326] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-17 21:27:16 +0800] [23326] [ERROR] Retrying in 1 second.
+[2017-02-17 21:27:17 +0800] [23326] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-17 21:27:17 +0800] [23326] [ERROR] Retrying in 1 second.
+[2017-02-17 21:27:18 +0800] [23326] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-17 21:27:18 +0800] [23326] [ERROR] Retrying in 1 second.
+[2017-02-17 21:27:19 +0800] [23326] [ERROR] Connection in use: ('127.0.0.1', 81)
+[2017-02-17 21:27:19 +0800] [23326] [ERROR] Retrying in 1 second.
+[2017-02-17 21:27:20 +0800] [23326] [ERROR] Can't connect to ('127.0.0.1', 81)
+[2017-02-17 22:36:23 +0800] [10988] [INFO] Parent changed, shutting down: <Worker 10988>
+[2017-02-17 22:36:23 +0800] [10988] [INFO] Worker exiting (pid: 10988)
+[2017-02-17 22:36:52 +0800] [27179] [INFO] Starting gunicorn 19.6.0
+[2017-02-17 22:36:52 +0800] [27179] [INFO] Listening at: http://127.0.0.1:81 (27179)
+[2017-02-17 22:36:52 +0800] [27179] [INFO] Using worker: sync
+[2017-02-17 22:36:52 +0800] [27201] [INFO] Booting worker with pid: 27201
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.992 seconds.
+Prefix dict has been built succesfully.

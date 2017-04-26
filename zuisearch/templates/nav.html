@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extracss %} <link href="{% static '../static/css/nav.css' %}" rel="stylesheet" />
+{% endblock%}
+<body>
+{% block content %}
+    <section>
+        <div class="left_nav">
+            <div class="logo_img"><a href="/"><img src="{% static '../static/images/zuilogo.png' %}" alt=""></a></div>
+            <div class="search">
+                <form method="get" action="/search">
+                    <input type="search" placeholder="站内搜索" id="id_q" name="q">
+                </form>
+            </div>
+            <ul>
+                {% for foo in column %}
+                    <li class="nav_list">{{ foo.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="main">
+            <div class="content">
+             {% for foo in right_data %}
+                <div class="detail">
+                {% for key in foo %}
+                    <div class="item">
+                        <a href="/detail/{{ key.id }}">{{ key.title }}</a>
+                    </div>
+                {% endfor %}
+                </div>
+             {% endfor %}
+             {% for foo in li_data %}
+                <div class="dot">
+                    <ul>
+                     <li class="li_focus"></li>
+                        {% for fo in foo %}
+                               <li></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+             {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block script %}
+    <script src="{% static '../static/js/nav.js' %}"></script>
+{% endblock %}

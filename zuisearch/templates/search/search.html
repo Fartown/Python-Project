@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+{% load staticfiles %} 
+{% load highlight %} 
+{% block extracss %}
+<link href="{% static '../static/css/sou.css' %}" rel="stylesheet" />
+{% endblock %}
+    {% block content %}
+    <section>
+        <div class="sou">
+            <form method="get" action=".">
+                {{ form }}
+            </form>
+        </div>
+    <div class="souresult">
+      {% if query %}
+        {% for result in page.object_list %}
+<div class="result_item">
+    <h4><a href="/detail/{{ result.object.id }}">{{ result.object.title }}</a></h4>
+    <p>{% highlight result.object.introduce with query css_class "keyword" max_length 20 %}</p>
+
+    <p>{% highlight result.object.wxname with query css_class "keyword" max_length 20 %}</p>
+
+    <p>{% highlight result.object.wxintro with query css_class "keyword" max_length 20 %}</p>
+
+    <p>{% highlight result.object.wbname with query css_class "keyword" max_length 20 %}</p>
+</div>
+
+
+
+        {% empty %}
+            <div class="empty">
+                <p>小晚查不到您需要的结果~.~! <br>如果是简称，可以试试换个关键词哦</p>
+                <br>
+                <img src="{% static '../static/images/noresult.png' %}" alt="">
+            </div>
+        {% endfor %}
+
+        {% if page.has_previous or page.has_next %}
+            <div class="pagination">
+                {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}上页{% if page.has_previous %}</a>{% endif %}
+                |
+                {% if page.has_next %}<a href="?q={{ query }}&amp;page={{ page.next_page_number }}">{% endif %}下页{% if page.has_next %}</a>
+            </div>
+         {% endif %}
+        {% endif %}
+    {% else %}
+    <div class="guide">
+        输入关键字,按回车即可搜索校内所有微博,微信和网站
+    <br>
+    例如:'醉晚亭'
+    </div>
+    {% endif %}
+    </div>
+    </section>
+    {% endblock %} {% block script %}
+    <script src="{% static '../static/js/baidu.js' %}"></script>
+    {% endblock %}

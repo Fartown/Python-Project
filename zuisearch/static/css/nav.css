@@ -1,0 +1,139 @@
+
+section{
+    width:100%;
+    height: 8.86rem;
+}
+.left_nav{
+    width:21.6%;
+    height: 100%;
+    position: absolute;
+    top: .5rem;
+}
+.logo_img{
+    margin-top: .65rem;
+}
+.logo_img img{
+    height: .78rem;
+    padding-left: 14.5%;
+}
+.search input{
+    margin: .275rem 0 0 .15rem;
+    width: 52%;
+    height: .51rem;
+    border-radius: 10px;
+    padding-left: 15px;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    font-size: 15px;
+}
+.left_nav ul{
+    width: 100%;
+    margin: .3rem 0 0 0;
+    padding: 0;
+}
+.left_nav ul li{
+    margin: 18px 0 0 0;
+    list-style-type:none;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    letter-spacing: 2px;
+    width: 58%;
+    height: .77rem;
+    line-height: .77rem;
+    font-size: 20px;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 0 .35rem .35rem  0;
+    cursor: pointer;
+}
+.left_nav li:hover{
+    letter-spacing: 3px;
+    background:rgba(0,161,241,0.6);
+    font-size: 22px;
+}
+/*右边*/
+.main{
+    width: 78.4%;
+    margin-left:21.6%;
+    height: 8.86rem;
+}
+.content{
+    margin-top: .923rem;
+    width: 79.5%;
+    height: 7.1rem;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.detail{
+    display: none;
+    height: 6.44rem;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -ms-flex-line-pack: end;
+    align-content: flex-start;
+    position: relative;
+}
+
+.detail_active{
+    display: -ms-flexbox;
+    display: flex;
+}
+.item{
+    margin: .79rem 0 0 5.2%;
+    height: .714rem;
+    width: 18.6%;
+    background:rgba(0,161,241,1);
+    font-size: 18px;
+    border-radius: 10px;
+    position: relative;
+}
+.item:hover{
+    color: white;
+    filter: alpha(opacity=70);
+    opacity: 0.70;
+    background-color: black;
+}
+
+.item a{    
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.dot{
+    display: none;
+    height: .45rem;
+    width: 100%;
+    text-align: center;
+}
+.dot_active{
+   display: block;
+}
+.dot ul{
+  text-align: center;
+  display: inline-block;
+  padding-left: 0;
+}
+.dot li,li{
+    display: inline-block;
+    list-style-type: none;
+    width: 15px;
+    height:15px;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 10px;
+}
+li.li_focus{
+    background:rgba(0,161,241,0.7); 
+    width: 16px;
+    height:16px;
+}
+body {
+    background-image: url(http://7xnzsi.com1.z0.glb.clouddn.com/zuibgblur.jpg);
+}

@@ -1,0 +1,158 @@
+section {
+    width: 100%;
+    height: 8.86rem;
+}
+section .logo{
+    width: 100%;
+    text-align: center;
+    margin-top: .92rem;
+}
+.logo img{
+    height: 1.3rem;
+}
+section .search {
+    width: 100%;
+    text-align: center;
+    margin-top:.52rem;
+}
+.search-box .form-control {
+    width: 44%;
+    height: .52rem;
+    padding-left: 15px;
+    border-radius: 10px;
+    border-width: 0;
+    opacity: .7;
+    filter: alpha(opacity=70);
+    font-size: .24rem;
+}
+.select {
+    width: 100%;
+    padding-top: .32rem;
+}
+
+.select input {
+    cursor: pointer;
+    height: 39px;
+    min-width: 5%;
+    /*background-color: #00a1f1;*/
+    /*filter: alpha(opacity=50);*/
+    /*opacity: 0.5;*/
+    background:rgba(0,153,204,0.6);
+    border-width: 0;
+    font-size: .23rem;
+    color: white;
+    font-family: Arial;
+    border-radius: 10px;
+}
+
+.select input:hover {
+    color: white;
+    border-width: 0;
+    filter: alpha(opacity=70);
+    opacity: 0.70;
+    background-color: black;
+}
+
+/*首页站点flex布局*/
+
+section .site {
+    overflow: hidden;
+    width: 60%;
+    margin: .68rem auto 0;
+}
+.left-table{
+    margin-right: 3%;
+}
+.left-table,
+.right-table {
+    width: 48.5%;
+    border-radius:10px;
+    float: left;
+    text-align: center;
+    height: 3rem;
+    background:rgba(255,255,255,0.4);
+}
+
+.site h4 {
+    height: .51rem;
+    line-height: .52rem;
+    font-size: 20px;
+    border-radius:10px;
+    background:rgba(0,153,204,0.6);
+    letter-spacing: 4px;
+}
+
+.lsite-box,
+.rsite-box {
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 17px;
+    color: white;
+    font-family: Arial;
+
+}
+
+.site-item {
+    -ms-flex: 0 0 24%;
+    flex: 0 0 25%;
+    height: .47rem;
+    border-radius: 6px;
+    background:rgba(0,153,204,0.7);
+    margin: .3rem  0 0 6.667%;
+}
+
+.site-item a {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: white;
+}
+.site-item a:hover {
+    color: white;
+    filter: alpha(opacity=70);
+    opacity: 0.70;
+    background-color: black;
+}
+
+p.more  {
+    text-align: center;
+    color: white;
+    margin: .45rem 0 0 0;
+}
+.more a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #00a1f1;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+    border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    width: 180px;
+}
+.more a:hover{
+        color: white;
+    filter: alpha(opacity=70);
+    opacity: 0.70;
+    background-color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
